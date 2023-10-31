@@ -27,7 +27,7 @@ export default function Projects({ color }) {
     const others = OtherProjectsArray();
     const options = TagsArray("ProjectsTags");
     
-    const [selected, setSelected] = useState("All");
+    const [selected, setSelected] = useState("Mostrar Todos");
 
     const handleSelected = (value) => {
       setSelected(value);
@@ -100,10 +100,10 @@ export default function Projects({ color }) {
           <Center px={4}>
             <ButtonGroup variant="outline">
               <Button
-                colorScheme={selected === "All" ? `${color}` : "gray"}
-                onClick={() => handleSelected("All")}
+                colorScheme={selected === "Mostrar Todos" ? `${color}` : "gray"}
+                onClick={() => handleSelected("Mostrar Todos")}
               >
-                All
+                Mostrar Todos
               </Button>
               {options.map((option) => (
                 <Button
@@ -118,7 +118,7 @@ export default function Projects({ color }) {
           <SimpleGrid columns={[1, 2, 3]} px={4} spacing={4}>
             {others
               .filter((other) => {
-                if (selected === "All") {
+                if (selected === "Mostrar Todos") {
                   return true;
                 } else {
                   return other.tags.includes(selected);
