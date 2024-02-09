@@ -5,11 +5,13 @@ const parseTags = (mdContent) => {
   const lines = mdContent.split("\n");
 
   for (let i = 0; i < lines.length; i++) {
-    const value = lines[i];
+    const value = lines[i].trim(); // Eliminar espacios al principio y al final de la línea
 
-    tags.push({
-      value
-    });
+    if (value) {
+      tags.push({
+        value
+      });
+    }
   }
   return tags;
 };

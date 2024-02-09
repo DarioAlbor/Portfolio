@@ -1,61 +1,61 @@
 ## Droguería Garzón S.A
-- *ANALISTA DE SISTEMAS* | Abr'21 - Actualidad
+- *FULL STACK DEVELOPER* | Abr'21 - Actualidad
 - ![DG](../assets/DG.png)
-- Tags: Todas
+- Tags: Full Stack
 - Lenguajes:
-  - JAVASCRIPT [orange]
-  - NODE JS [green]
-  - TYPESCRIPT [blue]
-  - PYTHON [yellow]
-  - PHP [white]
-  - SQL [pink]
-  - POWER BI [yellow]
-  - GIT [black]
+  - JAVASCRIPT (Node.js, TypeScript, React.js & Next.js) [yellow]
+  - .NET (C# & ASP.NET) [purple]
+  - SQL (MySql & SQLServer) [orange]
+  - Data Engineer & Analyst (ETL, PowerBI & Tableau) [blue]
 - List Items:
-  - Como Analista de Sistemas, fui responsable de automatizar procesos mediante el desarrollo de scripts, lo que resultó en una mejora significativa en el flujo de trabajo y la optimización de tareas.
-  - Trabajé en estrecha colaboración con el equipo para identificar áreas de mejora y proponer soluciones automatizadas que impulsaran la productividad y la eficiencia.
-  - Coordinación y gestión de la conectividad de APIs de aplicaciones, logrando la integración automática de procesos previamente manuales, lo que resultó en un flujo de trabajo completamente automatizado y más eficiente.
-  - Lideré proyectos de migración y adaptación de un sistema basado en Linux, realizando tareas de ETL de datos hacia una base de datos relacional.
-  - Trabajé como Analista de Datos facilitando la creación de dashboards personalizados solicitados por la empresa utilizando herramientas como Power BI.
+  - Procesos ETL desde COBOL hacía MySQL. (Stacks: JavaScript & SQL)
+  - Desarrollo de e-commerce, adaptado al sistema COBOL. (Stacks: JavaScript, .Net & SQL)
+  - Desarrollo de aplicación web estilo "Portal Administrativo" orientado a funcionar como Housekeeping para visualización y modificación de datos en el sistema COBOL, con objetivo a automatizar procesos internos y del sistema. (Stacks: JavaScript, Python & SQL)
+  - Automatización y monitoreo constante del proceso interno de actualización de precios diarios. (Stacks: JavaScript)
+  - Creación de paneles generales en Power BI, reutilizando los datos del proceso ETL desde el sistema. (Stacks: SQL)
 
 ## Vefixy
-- *DEVOPS & SYSADMIN* | Ene'23 - Actualidad
+- *DEVOPS* | Ene'23 - Actualidad
 - ![vefixy](../assets/vefixy.png)
-- Tags: Todas
+- Tags: Backend
 - Lenguajes:
-  - ALMALINUX [green]
-  - SQL [pink]
-  - PHP [white]
+  - LINUX [green]
+  - REDES [pink]
+  - INFRAESTRACTUTURA [white]
+  - CIBERSEGURIDAD [black]
 - List Items:
-  - Tareas de SYSADMIN
-  - Gestioné y administré los servidores de la empresa, asegurando su disponibilidad y rendimiento óptimo.
-  - Supervisé y mantuve el webmail, asegurando un flujo de comunicación eficiente y seguro.
-  - Administré y actualicé diversas páginas web y sitios, garantizando una experiencia de usuario óptima.
+  - Tareas varias de SYSADMIN.
+  - Gestioné y administré los servidores de empresas, asegurando su disponibilidad y rendimiento óptimo.
+  - Supervisé y mantuve protegido en todo momento el webmail, asegurando un flujo de comunicación eficiente y seguro, priorizando una automatización precisa de la whitelist.
+  - Administré y actualicé diversos hosting de todo tipo, garantizando una experiencia de usuario óptima y confiable.
   - Coordiné la gestión de dominios, asegurando su registro, renovación y configuración adecuada.
   - Implementé y gestioné certificados SSL para garantizar la seguridad de las comunicaciones en línea.
-  - Administré el hosting de la empresa, asegurando su disponibilidad y configuración adecuada.
+  - Administré la infraestructura de las empresas que trabajaron con nuestros servidores, priorizando un flujo de trabajo limpio y en todo momento documentado para futuros cambios.
   - Mantuve y optimicé bases de datos para garantizar un rendimiento eficiente y la integridad de los datos.
+  - Siempre mantuve con las últimas tecnologias todo lo que se pudo adaptar, priorice que el cliente pueda entender servidores con Linux utilizando paneles de gestión estilo Virtualmin, configurandolo a medida y capacitando sobre su uso.
 
 ## Laboratorio Albula S.R.L
-- *BRANDING MANAGER* | Jan'23 - Actualidad
+- *FRONTEND DEVELOPER* | Jan'23 - Actualidad
 - ![ALBULA](../assets/ALBULA.png)
-- Tags: Todas
+- Tags: Frontend
 - Lenguajes:
   - META ADS [blue]
   - GOOGLE ADS [green]
   - SEO [yellow]
   - PHP [white]
-  - CSS [pink]
+  - WORDPRESS [red]
+  - JAVASCRIPT (React, Next, Chakra, Tailwand) [yellow]
 - List Items:
   - Lideré iniciativas de posicionamiento SEO para la marca y sus productos, lo que resultó en una mayor visibilidad en los motores de búsqueda y un mayor tráfico orgánico hacia el sitio web.
   - Desarrollé y gestioné campañas publicitarias utilizando Meta ADS y Google Ads, con el objetivo de posicionar las marcas en todo el país y llegar a una audiencia más amplia y específica captando ventas.
-  - Me destaqué como Web Developer, asumí la responsabilidad de la creación y optimización de las páginas web del Laboratorio y sus marcas. Esto incluyó la mejora de la usabilidad, el diseño y el rendimiento de los sitios, lo que resultó en una experiencia de usuario más atractiva y eficiente.
+  - Me destaqué como Web Developer, asumí la responsabilidad de la creación y optimización de las páginas web del Laboratorio y sus marcas, las cuales estaban anteriormente desarrolladas en Wordpress. Esto incluyó la mejora de la usabilidad, el diseño y el rendimiento de los sitios, lo que resultó en una experiencia de usuario más atractiva y eficiente.
   - Colaboré estrechamente con equipos especializados en garantizar una alineación coherente entre la estrategia de marca y las iniciativas de marketing, asegurando así una presencia de marca sólida y consistente en todos los canales.
+  - Como desarrollador migré todas las páginas desactualizadas que heredé hacía tecnologias tales como JavaScript.
 
   ## Vefixy
 - *DEVOPS & SYSADMIN* | Ene'23 - Actualidad
 - ![vefixy](../assets/vefixy.png)
-- Tags: Todas
+- Tags: Backend
 - Lenguajes:
   - ALMALINUX [green]
   - SQL [pink]

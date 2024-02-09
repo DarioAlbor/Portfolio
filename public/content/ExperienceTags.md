@@ -1,1 +1,3 @@
-Todas
+Full Stack
+Backend
+Frontend
