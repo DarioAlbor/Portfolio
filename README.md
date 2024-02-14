@@ -1,6 +1,6 @@
 ![hero](example/hero.png)
 
-# Este Portfolio está usando React.js y Chakra UI
+# Este Portfolio está usando React.js y Chakra UI 💙
 
 |    ![experience](example/Experience.png)    | ![projects](example/Projects.png) |
 | :-----------------------------------------: | :-------------------------------: |
@@ -8,6 +8,6 @@
 | ![otherprojects](example/OtherProjects.png) |   ![mobile](example/Mobile.gif)   |
 |        Mis proyectos más personales         | Diseño responsive para celulares  |
 | |
-|                             Conectemos en LinkedIn                              |
-|                         ![linkedin](example/icons/linkedin.png)                 |
+|           Conectemos en LinkedIn            |        Visita el sitio web        |
+| ![linkedin](example/icons/linkedin.png)     | ![web](example/icons/web.png)     |
 |  |
