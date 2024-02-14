@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Box,
   Container,
@@ -7,6 +8,8 @@ import {
 } from "@chakra-ui/react";
 
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
     <Box
       bg={useColorModeValue("gray.50", "gray.900")}
@@ -18,7 +21,7 @@ export default function Footer() {
         py={4}
         align="center"
       >
-        <Text>© 2023 Darío Albor. Todos los derechos reservados.</Text>
+        <Text>© {currentYear} Darío Albor. Todos los derechos reservados.</Text>
       </Container>
     </Box>
   );

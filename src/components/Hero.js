@@ -10,6 +10,7 @@ import {
   createIcon,
 } from "@chakra-ui/react";
 import ProfileArray from "./ProfileArray";
+import Carousel from "./carousel";
 
 export default function Header({ color }) {
   const profile = ProfileArray();
@@ -32,15 +33,15 @@ export default function Header({ color }) {
           rel="stylesheet"
         />
       </Heading>
-
       <Container maxW={"3xl"} id="hero">
         <Stack
           as={Box}
           textAlign={"center"}
-          spacing={{ base: 8, md: 14 }}
-          pb={{ base: 20, md: 36 }}
-          pt={{ base: 36, md: 52 }}
+          spacing={{ base: 8, md: 5 }}
+          pb={{ base: 20, md: 30 }}
+          pt={{ base: 36, md: 20 }}
         >
+                <Carousel/>
           <Heading
             fontWeight={600}
             fontSize={{ base: "2xl", sm: "4xl", md: "6xl" }}
