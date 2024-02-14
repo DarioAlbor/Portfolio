@@ -7,9 +7,7 @@
 |         Mis experiencias laborales          |Mis mejores proyectos profesionales|
 | ![otherprojects](example/OtherProjects.png) |   ![mobile](example/Mobile.gif)   |
 |        Mis proyectos más personales         | Diseño responsive para celulares  |
-
-
-
-
-
-![linkedin](example/icons/linkedin.png)
+| :-----------------------------------------------------------------------------: |
+|                             Conectemos en LinkedIn                              |
+|                         ![linkedin](example/icons/linkedin.png)                 |
+| :-----------------------------------------------------------------------------: |
