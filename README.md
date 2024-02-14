@@ -9,5 +9,4 @@
 |        Mis proyectos más personales         | Diseño responsive para celulares  |
 | |
 |           Conectemos en LinkedIn            |        Visita el sitio web        |
-| ![linkedin](example/icons/linkedin.png)     | ![web](example/icons/web.png)     |
-|  |
+| [![linkedin](example/icons/linkedin.png)](https://www.linkedin.com/in/albordario/) | [![web](example/icons/web.png)](https://www.darioalbor.netlify.app/) |
