@@ -1,32 +1,30 @@
 ## Droguería Garzón S.A
-- *FULL STACK DEVELOPER* | Abr'21 - Actualidad
+- *Backend* | Abr'22 - Actualidad
 - ![DG](../assets/DG.png)
-- Tags: Full Stack
+- Tags: Backend
 - Lenguajes:
-  - JAVASCRIPT (Node.js, TypeScript, React.js & Next.js) [yellow]
+  - JAVASCRIPT (Node.js & TypeScript) [yellow]
   - .NET (C# & ASP.NET) [purple]
   - SQL (MySql & SQLServer) [orange]
-  - Data Engineer & Analyst (ETL, PowerBI & Tableau) [blue]
 - List Items:
-  - Procesos ETL desde COBOL hacía MySQL. (Stacks: JavaScript & SQL)
-  - Desarrollo de e-commerce, adaptado al sistema COBOL. (Stacks: JavaScript, .Net & SQL)
+  - Desarrollo de e-commerce, adaptado a las necesidades de la empresa utilizando los datos en tiempo real del sistema COBOL. (Stacks: JavaScript, .Net & SQL)
   - Desarrollo de aplicación web estilo "Portal Administrativo" orientado a funcionar como Housekeeping para visualización y modificación de datos en el sistema COBOL, con objetivo a automatizar procesos internos y del sistema. (Stacks: JavaScript, Python & SQL)
   - Automatización y monitoreo constante del proceso interno de actualización de precios diarios. (Stacks: JavaScript)
-  - Creación de paneles generales en Power BI, reutilizando los datos del proceso ETL desde el sistema. (Stacks: SQL)
 
 ## Vefixy
-- *DEVOPS* | Ene'23 - Actualidad
-- ![vefixy](../assets/vefixy.png)
+- *BACKEND & SYSADMIN* | Ene'23 - Actualidad
+- ![vefixy](../assets/vefixy.svg)
 - Tags: Backend
 - Lenguajes:
   - LINUX [green]
+  - AWS [yellow]
   - REDES [pink]
   - INFRAESTRACTUTURA [white]
   - CIBERSEGURIDAD [black]
 - List Items:
-  - Tareas varias de SYSADMIN.
+  - Me encargue de la creación de todo el portal administrativo de la webapp, el cual se comunica en tiempo real con la API de WHCMS para monitorear los clientes que contratan el servicio, a su vez poder brindarles una visualización clara de su facturación.
   - Gestioné y administré los servidores de empresas, asegurando su disponibilidad y rendimiento óptimo.
-  - Supervisé y mantuve protegido en todo momento el webmail, asegurando un flujo de comunicación eficiente y seguro, priorizando una automatización precisa de la whitelist.
+  - Automatización del proceso de otorgarmiento del servicio una vez contratado. (Pasarela de pago, creación del servicio en AWS, otorgarmiento y posterior soporte)
   - Administré y actualicé diversos hosting de todo tipo, garantizando una experiencia de usuario óptima y confiable.
   - Coordiné la gestión de dominios, asegurando su registro, renovación y configuración adecuada.
   - Implementé y gestioné certificados SSL para garantizar la seguridad de las comunicaciones en línea.
@@ -35,7 +33,7 @@
   - Siempre mantuve con las últimas tecnologias todo lo que se pudo adaptar, priorice que el cliente pueda entender servidores con Linux utilizando paneles de gestión estilo Virtualmin, configurandolo a medida y capacitando sobre su uso.
 
 ## Laboratorio Albula S.R.L
-- *FRONTEND DEVELOPER* | Jan'23 - Actualidad
+- *FRONTEND* | Ene'23 - Feb'24
 - ![ALBULA](../assets/ALBULA.png)
 - Tags: Frontend
 - Lenguajes:
@@ -51,6 +49,29 @@
   - Me destaqué como Web Developer, asumí la responsabilidad de la creación y optimización de las páginas web del Laboratorio y sus marcas, las cuales estaban anteriormente desarrolladas en Wordpress. Esto incluyó la mejora de la usabilidad, el diseño y el rendimiento de los sitios, lo que resultó en una experiencia de usuario más atractiva y eficiente.
   - Colaboré estrechamente con equipos especializados en garantizar una alineación coherente entre la estrategia de marca y las iniciativas de marketing, asegurando así una presencia de marca sólida y consistente en todos los canales.
   - Como desarrollador migré todas las páginas desactualizadas que heredé hacía tecnologias tales como JavaScript.
+
+## Droguería Garzón S.A
+- *Frontend* | Abr'22 - Actualidad
+- ![DG](../assets/DG.png)
+- Tags: Frontend
+- Lenguajes:
+  - JAVASCRIPT (React.js & Next.js) [yellow]
+  - FIGMA [red]
+- List Items:
+  - Creación de todo el diseño del portal utilizando FIGMA.
+  - Diseño UX/UI
+
+## Droguería Garzón S.A
+- *Data Engineer* | Abr'22 - Actualidad
+- ![DG](../assets/DG.png)
+- Tags: Data Engineer
+- Lenguajes:
+  - JAVASCRIPT (Node.js & TypeScript) [yellow]
+  - Data Engineer & Analyst (ETL, PowerBI & Tableau) [blue]
+  - SQL (MySql & SQLServer) [orange]
+- List Items:
+  - Procesos automatizados ETL centrados en obtener datos desde el sistema COBOL, transformarlos y posteriormente subirlos a una base de datos para poder utilizarlos. (Stacks: .Net & SQL)
+  - Creación de paneles generales en Power BI, reutilizando los datos del proceso ETL desde el sistema. (Stacks: SQL)
 
   ## Vefixy
 - *DEVOPS & SYSADMIN* | Ene'23 - Actualidad

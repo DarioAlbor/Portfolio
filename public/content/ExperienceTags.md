@@ -1,3 +1,3 @@
-Full Stack
 Backend
 Frontend
+Data Engineer

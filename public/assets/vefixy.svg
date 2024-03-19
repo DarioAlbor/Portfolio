@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 17.74 16.47">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #443487;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: url(#Degradado_sin_nombre_30);
+      }
+
+      .cls-3 {
+        fill: url(#Degradado_sin_nombre_29);
+      }
+    </style>
+    <linearGradient id="Degradado_sin_nombre_30" data-name="Degradado sin nombre 30" x1="6.87" y1="8.23" x2="17.58" y2="8.23" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#6d9cd0"/>
+      <stop offset="1" stop-color="#5e4c94"/>
+    </linearGradient>
+    <linearGradient id="Degradado_sin_nombre_29" data-name="Degradado sin nombre 29" x1="923.34" y1="148.23" x2="933.61" y2="148.23" gradientTransform="translate(933.74 156.47) rotate(-180)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5e4c94"/>
+      <stop offset="1" stop-color="#6d9cd0"/>
+    </linearGradient>
+  </defs>
+  <polygon class="cls-2" points="14.07 1.25 17.58 2.76 10.38 15.22 6.87 13.71 14.07 1.25"/>
+  <polygon class="cls-3" points="3.7 1.31 10.4 13.77 6.84 15.16 .14 2.7 3.7 1.31"/>
+  <ellipse class="cls-1" cx="8.62" cy="14.46" rx="1.92" ry="2"/>
+  <path class="cls-1" d="M13.91,2c0-1.11.86-2,1.92-2s1.92.9,1.92,2-.86,2-1.92,2-1.92-.9-1.92-2Z"/>
+  <path class="cls-1" d="M0,2C0,.9.86,0,1.92,0s1.92.9,1.92,2-.86,2-1.92,2-1.92-.9-1.92-2Z"/>
+</svg>
