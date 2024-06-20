@@ -10,29 +10,74 @@ import {
   Card,
   CardBody,
   Image,
+  Icon,
   Heading,
-  SimpleGrid,
   Badge,
   Link,
   Center,
+  useDisclosure,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  IconButton,
 } from "@chakra-ui/react";
 import { Fade } from "react-reveal";
 import { useState } from "react";
+import { FaExternalLinkAlt } from "react-icons/fa";
+import { MdOutlineZoomOutMap } from "react-icons/md";
 import ProjectsArray from "./ProjectsArray";
-import OtherProjectsArray from "./OtherProjectsArray";
 import TagsArray from "./TagsArray";
+import Slider from "react-slick";
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 export default function Projects({ color }) {
-    const projects = ProjectsArray();
-    const others = OtherProjectsArray();
-    const options = TagsArray("ProjectsTags");
-    
-    const [selected, setSelected] = useState("Mostrar Todos");
+  const projects = ProjectsArray();
+  const options = TagsArray("ProjectsTags");
 
-    const handleSelected = (value) => {
-      setSelected(value);
-    };
-    
+  const [selected, setSelected] = useState("Mostrar Todos");
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [modalContent, setModalContent] = useState({});
+  const { isOpen: isZoomOpen, onOpen: onZoomOpen, onClose: onZoomClose } = useDisclosure();
+  const [zoomImage, setZoomImage] = useState("");
+
+  const handleSelected = (value) => {
+    setSelected(value);
+  };
+
+  const handleModalOpen = (project) => {
+    setModalContent(project);
+    onOpen();
+  };
+
+  const handleZoomOpen = (image) => {
+    setZoomImage(image);
+    onZoomOpen();
+  };
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    centerMode: true,
+    centerPadding: "5px",
+  };
+
+  const modalSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+
   return (
     <>
       <Container maxW={"3xl"} id="projects">
@@ -51,49 +96,60 @@ export default function Projects({ color }) {
             </HStack>
             <Divider orientation="horizontal" />
           </Stack>
-          <Stack px={4} spacing={4}>
+          <Slider {...settings}>
             {projects.map((project) => (
-              <Fade bottom>
-                <Card
-                  key={project.name}
-                  direction={{
-                    base: "column",
-                  }}
-                  overflow="hidden"
-                >
-                  <Image objectFit="cover" src={project.image} />
+              <Fade bottom key={project.name}>
+                <Box px={2} position="relative">
+                  <Card
+                    direction={{
+                      base: "column",
+                    }}
+                    overflow="hidden"
+                    height="450px" // Ajusta el tamaño del contenedor
+                  >
+                    <Box position="relative">
+                      <Image objectFit="cover" src={project.image} height="200px" /> {/* Ajusta el tamaño de la imagen */}
+                      <IconButton
+                        aria-label="Zoom image"
+                        icon={<MdOutlineZoomOutMap />}
+                        size="sm"
+                        position="absolute"
+                        bottom="10px"
+                        right="10px"
+                        backgroundColor="rgba(0, 0, 0, 0.5)"
+                        color="white"
+                        onClick={() => handleZoomOpen(project.image)}
+                      />
+                    </Box>
 
-                  <Stack>
-                    <CardBody align="left">
-                      <Heading size="md">{project.name}</Heading>
+                    <Stack>
+                      <CardBody align="left">
+                        <Heading size="md">{project.name}</Heading>
 
-                      <Text py={2}>{project.description}</Text>
+                        <Text py={2}>{project.description}</Text>
 
-                      <HStack py={2}>
-                        {project.buttons.map((button) => (
-                          <a key={button.text} href={button.href}>
-                            <Button color={`${color}.400`}>
-                              {button.text}
-                            </Button>
-                          </a>
-                        ))}
-                      </HStack>
-                      <HStack pt={4} spacing={2}>
-                        {project.badges.map((badge) => (
-                          <Badge
-                            key={badge.text}
-                            colorScheme={badge.colorScheme}
-                          >
-                            {badge.text}
-                          </Badge>
-                        ))}
-                      </HStack>
-                    </CardBody>
-                  </Stack>
-                </Card>
+                        <HStack py={2}>
+                          <Button color={`${color}.400`} onClick={() => handleModalOpen(project)}>
+                            Ver más
+                          </Button>
+                        </HStack>
+                        <HStack pt={4} spacing={2}>
+                          {project.badges.map((badge) => (
+                            <Badge
+                              key={badge.text}
+                              colorScheme={badge.colorScheme}
+                            >
+                              {badge.text}
+                            </Badge>
+                          ))}
+                        </HStack>
+                      </CardBody>
+                    </Stack>
+                  </Card>
+                </Box>
               </Fade>
             ))}
-          </Stack>
+          </Slider>
           <Text color={"gray.600"} fontSize={"xl"} px={4}>
             Más Proyectos
           </Text>
@@ -107,6 +163,7 @@ export default function Projects({ color }) {
               </Button>
               {options.map((option) => (
                 <Button
+                  key={option.value}
                   colorScheme={selected === option.value ? `${color}` : "gray"}
                   onClick={() => handleSelected(option.value)}
                 >
@@ -115,56 +172,84 @@ export default function Projects({ color }) {
               ))}
             </ButtonGroup>
           </Center>
-          <SimpleGrid columns={[1, 2, 3]} px={4} spacing={4}>
-            {others
-              .filter((other) => {
-                if (selected === "Mostrar Todos") {
-                  return true;
-                } else {
-                  return other.tags.includes(selected);
-                }
-              })
-              .map((other) => (
-                <Fade bottom>
-                  <Card key={other.name}>
-                    <Stack>
-                      <CardBody align="left" h={[null, "40vh"]}>
-                        <Heading size="sm">{other.name}</Heading>
-
-                        <Text fontSize="sm" py={2}>
-                          {other.description}
-                        </Text>
-
-                        <HStack spacing={2}>
-                          {other.buttons.map((button) => (
-                            <Link
-                              key={button.text}
-                              href={button.href}
-                              color={`${color}.400`}
-                            >
-                              {button.text}
-                            </Link>
-                          ))}
-                        </HStack>
-                        <HStack flexWrap="wrap" pt={4} spacing={2}>
-                          {other.badges.map((badge) => (
-                            <Badge
-                              my={2}
-                              key={badge.text}
-                              colorScheme={badge.colorScheme}
-                            >
-                              {badge.text}
-                            </Badge>
-                          ))}
-                        </HStack>
-                      </CardBody>
-                    </Stack>
-                  </Card>
-                </Fade>
-              ))}
-          </SimpleGrid>
         </Stack>
       </Container>
+
+      <Modal isOpen={isOpen} onClose={onClose} isCentered>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>{modalContent.name}</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            {modalContent.carrouselImages && modalContent.carrouselImages.length > 1 ? (
+              <Slider {...modalSettings}>
+                {modalContent.carrouselImages.map((image, index) => (
+                  <Box key={index} position="relative">
+                    <Image src={image} alt={`${modalContent.name} image ${index + 1}`} />
+                    <IconButton
+                      aria-label="Zoom image"
+                      icon={<MdOutlineZoomOutMap />}
+                      size="sm"
+                      position="absolute"
+                      bottom="10px"
+                      right="10px"
+                      backgroundColor="rgba(0, 0, 0, 0.5)"
+                      color="white"
+                      onClick={() => handleZoomOpen(image)}
+                    />
+                  </Box>
+                ))}
+              </Slider>
+            ) : (
+              modalContent.carrouselImages && modalContent.carrouselImages.length === 1 && (
+                <Box position="relative">
+                  <Image src={modalContent.carrouselImages[0]} alt={modalContent.name} />
+                  <IconButton
+                    aria-label="Zoom image"
+                    icon={<MdOutlineZoomOutMap />}
+                    size="sm"
+                    position="absolute"
+                    bottom="10px"
+                    right="10px"
+                    backgroundColor="rgba(0, 0, 0, 0.5)"
+                    color="white"
+                    onClick={() => handleZoomOpen(modalContent.carrouselImages[0])}
+                  />
+                </Box>
+              )
+            )}
+            <Text mt={4}>{modalContent.detailedDescription}</Text>
+            {modalContent.link && (
+              <Center mt={4}>
+                <Link href={modalContent.link} isExternal>
+                  <Button
+                    leftIcon={<Icon as={FaExternalLinkAlt} />}
+                    colorScheme="gray"
+                    variant="solid"
+                  >
+                    VISITAR
+                  </Button>
+                </Link>
+              </Center>
+            )}
+          </ModalBody>
+          <ModalFooter>
+            <Button colorScheme={color} mr={3} onClick={onClose}>
+              Cerrar
+            </Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
+
+      <Modal isOpen={isZoomOpen} onClose={onZoomClose} size="full" isCentered>
+        <ModalOverlay />
+        <ModalContent maxW="80vw" maxH="80vh" bg="rgba(0, 0, 0, 0.8)">
+          <ModalCloseButton color="white" />
+          <ModalBody display="flex" justifyContent="center" alignItems="center">
+            <Image src={zoomImage} alt="Zoomed image" maxW="100%" maxH="100%" />
+          </ModalBody>
+        </ModalContent>
+      </Modal>
     </>
   );
 }

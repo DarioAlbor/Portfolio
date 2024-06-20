@@ -1,13 +1,13 @@
 ## Site Name
-- Darío Albor - Portfolio
+- Darío Albor - Portafolio
 
 ## Header
 - Darío Albor
-- Software Engineer 💻
-- ¡Bienvenid@ a mi Portfolio! Actualmente estudiante de la carreta "Ingenieria en Sistemas" en la UTN (Argentina) 👨🏻‍💻
+- Dev. FULL STACK 💻
+- ¡Bienvenid@ a mi Portfolio! Actualmente estudiante de la carrera "Ingenieria en Sistemas" en la UTN (Argentina) 👨🏻‍💻
 
 ## About
-Actualmente estudiante de Ingeniería en sistemas, apasionado por la tecnología y el desarrollo desde temprana edad, con un historial comprobado. Mis habilidades blandas me han permitido incursionar en el mundo de la informática, especializándome en la programación.
+Estudiante de la carrera de ingeniería en sistemas, especializado en el desarrollo Full Stack, me destaco en tecnologías como JavaScript, Java SPRING BOOT y PHP, aunque mi fuerte es el stack MERN.
 
 ## Contact
 Enlaces de contacto
@@ -16,4 +16,4 @@ Enlaces de contacto
 - Email: dario@vefixy.com
 
 ## Logo
-- PORTFOLIO	
+- PORTAFOLIO

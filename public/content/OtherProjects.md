@@ -17,7 +17,7 @@ Una plataforma web dinámica y atractiva, diseñada para destacar el producto es
   - Responsive Design [green]
   - HK [yellow]
 - Buttons:
-  - Visitar [https://www.pelente.com/]
+  - Visitar [https://www.github.com/]
 
 ## MÁSPelente - WEB
 Web personalizada creada especialmente para los sorteos de productos 'Pelente' organizados por Laboratorio Albula. Esta innovadora solución integra datos de la web principal y del subdominio, permitiendo una experiencia de participación fluida. Cuenta con paneles para concursantes y administradores del concurso, además de una gama de funciones diseñadas para optimizar el proceso de selección de ganadores.

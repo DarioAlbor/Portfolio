@@ -8,12 +8,9 @@ import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
-function App() {
-  // Available Colours:
-  // blue, cyan, gray, green, orange, pink, purple, red, teal, yellow
 
-  // edit this variable to change the color theme
-  const color = "teal";
+function App() {
+  const color = "blue";
 
   return (
     <>

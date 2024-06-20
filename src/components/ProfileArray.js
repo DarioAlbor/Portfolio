@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 const parseProfile = (mdContent) => {
   const profile = {
-    siteName: "Darío Albor - Portfolio",
+    siteName: "Darío Albor - Portafolio",
     headerName: "",
     headerRole: "",
     headerDesc: "",
@@ -45,7 +45,7 @@ const parseProfile = (mdContent) => {
           profile.logo = lines[++i].substr(2).trim();
           break;
         default:
-          // do nothing
+          
           break;
       }
     }

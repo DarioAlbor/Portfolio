@@ -14,7 +14,9 @@ const parseProjects = (mdContent) => {
       const image = imageLine.match(/!\[(.*)\]\((.*)\)/)[2];
       const tags = lines[++i].split(":")[1].trim();
       const badges = [];
-      const buttons = [];
+      let link = "";
+      let detailedDescription = "";
+      const carrouselImages = [];
 
       while (lines[++i] && !lines[i].startsWith("- Lenguajes:")) {}
       while (lines[++i] && lines[i].startsWith("  - ")) {
@@ -24,11 +26,19 @@ const parseProjects = (mdContent) => {
         badges.push({ text: badgeName, colorScheme: badgeColor });
       }
 
-      while (lines[++i] && lines[i].startsWith("  - ")) {
-        const buttonLine = lines[i].substr(4).split("[");
-        const buttonText = buttonLine[0].trim();
-        const buttonHref = buttonLine[1].split("]")[0].trim();
-        buttons.push({ text: buttonText, href: buttonHref });
+      while (lines[++i] && lines[i].startsWith("- ")) {
+        if (lines[i].startsWith("- Enlace:")) {
+          link = lines[i].match(/\[([^\]]+)\]\(([^)]+)\)/)[2].trim();
+        }
+        if (lines[i].startsWith("- Descripción detallada:")) {
+          detailedDescription = lines[++i].trim();
+        }
+        if (lines[i].startsWith("- Carrousel:")) {
+          while (lines[++i] && lines[i].startsWith("  - ![")) {
+            const image = lines[i].match(/!\[(.*)\]\((.*)\)/)[2];
+            carrouselImages.push(image);
+          }
+        }
       }
 
       projects.push({
@@ -37,7 +47,9 @@ const parseProjects = (mdContent) => {
         image,
         tags: [tags],
         badges,
-        buttons,
+        link,
+        detailedDescription,
+        carrouselImages,
       });
     }
   }
@@ -49,7 +61,7 @@ const ProjectsArray = () => {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    fetch("../content/Projects.md")
+    fetch("/content/Projects.md")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to fetch markdown content");

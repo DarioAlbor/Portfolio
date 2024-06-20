@@ -3,16 +3,18 @@
 - ![DG](../assets/DG.png)
 - Tags: Backend
 - Lenguajes:
-  - JAVASCRIPT (Node.js & TypeScript) [yellow]
-  - .NET (C# & ASP.NET) [purple]
-  - SQL (MySql & SQLServer) [orange]
+  - NODE.JS [yellow]
+  - PHP [green]
+  - MySQL [orange]
+  - LINUX [purple]
 - List Items:
-  - Desarrollo de e-commerce, adaptado a las necesidades de la empresa utilizando los datos en tiempo real del sistema COBOL. (Stacks: JavaScript, .Net & SQL)
-  - Desarrollo de aplicación web estilo "Portal Administrativo" orientado a funcionar como Housekeeping para visualización y modificación de datos en el sistema COBOL, con objetivo a automatizar procesos internos y del sistema. (Stacks: JavaScript, Python & SQL)
-  - Automatización y monitoreo constante del proceso interno de actualización de precios diarios. (Stacks: JavaScript)
+  - Desarrollo de e-commerce, adaptado a las necesidades de la empresa utilizando los datos en tiempo real del sistema COBOL.
+  - Desarrollo de aplicación web estilo "Portal Administrativo" orientado a funcionar como UI para la visualización y modificación de datos en el sistema COBOL, con objetivo a automatizar procesos internos y del sistema base.
+  - Automatización constante del proceso interno de actualización de precios diarios. Tomando los mismos desde el registro nacional de precios (Alfabeta) para posteriormente adaptarlos al sistema COBOL.
+  - Enlaces de utilidad: www.portal.drogueriagarzon.com
 
 ## Vefixy
-- *BACKEND & SYSADMIN* | Ene'23 - Actualidad
+- *Backend* | Ene'23 - Jun'24
 - ![vefixy](../assets/vefixy.svg)
 - Tags: Backend
 - Lenguajes:
@@ -32,8 +34,8 @@
   - Mantuve y optimicé bases de datos para garantizar un rendimiento eficiente y la integridad de los datos.
   - Siempre mantuve con las últimas tecnologias todo lo que se pudo adaptar, priorice que el cliente pueda entender servidores con Linux utilizando paneles de gestión estilo Virtualmin, configurandolo a medida y capacitando sobre su uso.
 
-## Laboratorio Albula S.R.L
-- *FRONTEND* | Ene'23 - Feb'24
+## Laboratorio Albula S.R.L (Segunda marca de Droguería Garzón)
+- *Frontend* | Ene'23 - Feb'24
 - ![ALBULA](../assets/ALBULA.png)
 - Tags: Frontend
 - Lenguajes:
@@ -55,7 +57,8 @@
 - ![DG](../assets/DG.png)
 - Tags: Frontend
 - Lenguajes:
-  - JAVASCRIPT (React.js & Next.js) [yellow]
+  - REACT.JS [blue]
+  - CHAKRA UI [green]
   - FIGMA [red]
 - List Items:
   - Creación de todo el diseño del portal utilizando FIGMA.
@@ -66,12 +69,13 @@
 - ![DG](../assets/DG.png)
 - Tags: Data Engineer
 - Lenguajes:
-  - JAVASCRIPT (Node.js & TypeScript) [yellow]
-  - Data Engineer & Analyst (ETL, PowerBI & Tableau) [blue]
-  - SQL (MySql & SQLServer) [orange]
+  - NODE.JS [yellow]
+  - POWERBI [blue]
+  - TABLEAU [red]
+  - MYSQL [orange]
 - List Items:
-  - Procesos automatizados ETL centrados en obtener datos desde el sistema COBOL, transformarlos y posteriormente subirlos a una base de datos para poder utilizarlos. (Stacks: .Net & SQL)
-  - Creación de paneles generales en Power BI, reutilizando los datos del proceso ETL desde el sistema. (Stacks: SQL)
+  - Procesos automatizados ETL centrados en obtener datos desde el sistema COBOL, transformarlos y posteriormente subirlos a una base de datos para poder utilizarlos.
+  - Creación de paneles generales en Power BI, reutilizando los datos del proceso ETL desde el sistema.
 
   ## Vefixy
 - *DEVOPS & SYSADMIN* | Ene'23 - Actualidad

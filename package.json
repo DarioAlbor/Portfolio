@@ -1,5 +1,5 @@
 {
-  "name": "yarn",
+  "name": "PortafolioDarioAlbor",
   "version": "0.1.0",
   "private": true,
   "homepage": ".",
@@ -24,14 +24,15 @@
     "react-markdown": "^8.0.6",
     "react-reveal": "^1.2.2",
     "react-scripts": "5.0.1",
+    "react-slick": "^0.30.2",
     "remarkable": "^2.0.1",
+    "slick-carousel": "^1.8.1",
     "styled-components": "^6.1.8",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "predeploy": "yarn build",
-    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
