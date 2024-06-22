@@ -22,11 +22,15 @@ const parseOtherProjects = (mdContent) => {
         badges.push({ text: badgeName, colorScheme: badgeColor });
       }
 
-      while (lines[++i] && lines[i].startsWith("  - ")) {
-        const buttonLine = lines[i].substr(4).split("[");
-        const buttonText = buttonLine[0].trim();
-        const buttonHref = buttonLine[1].split("]")[0].trim();
-        buttons.push({ text: buttonText, href: buttonHref });
+      while (lines[++i] && lines[i].startsWith("- ")) {
+        if (lines[i].startsWith("- Buttons:")) {
+          while (lines[++i] && lines[i].startsWith("  - ")) {
+            const buttonLine = lines[i].substr(4).split("[");
+            const buttonText = buttonLine[0].trim();
+            const buttonHref = buttonLine[1].split("]")[0].trim();
+            buttons.push({ text: buttonText, href: buttonHref });
+          }
+        }
       }
 
       others.push({
@@ -43,10 +47,10 @@ const parseOtherProjects = (mdContent) => {
 };
 
 const OtherProjectsArray = () => {
-  const [OtherProjects, setOtherProjects] = useState([]);
+  const [otherProjects, setOtherProjects] = useState([]);
 
   useEffect(() => {
-    fetch("../content/OtherProjects.md")
+    fetch("/content/OtherProjects.md")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to fetch markdown content");
@@ -61,7 +65,7 @@ const OtherProjectsArray = () => {
       });
   }, []);
 
-  return OtherProjects;
+  return otherProjects;
 };
 
 export default OtherProjectsArray;

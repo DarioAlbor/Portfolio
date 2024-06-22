@@ -1,1 +1,1 @@
-WordPress
+Landing Page

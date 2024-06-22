@@ -1,6 +1,6 @@
 ## Albula - WEB
 Una web moderna y elegante diseñada para Albula, líder en la industria farmacéutica. Destacando la excelencia de la empresa, el diseño es completamente adaptable a dispositivos móviles para una experiencia óptima.
-- Tags: WordPress
+- Tags: Landing Page
 - Lenguajes:
   - WordPress [blue]
   - SEO [pink]

@@ -30,6 +30,7 @@ import { useState } from "react";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { MdOutlineZoomOutMap } from "react-icons/md";
 import ProjectsArray from "./ProjectsArray";
+import OtherProjectsArray from "./OtherProjectsArray";
 import TagsArray from "./TagsArray";
 import Slider from "react-slick";
 
@@ -38,6 +39,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 export default function Projects({ color }) {
   const projects = ProjectsArray();
+  const otherProjects = OtherProjectsArray();
   const options = TagsArray("ProjectsTags");
 
   const [selected, setSelected] = useState("Mostrar Todos");
@@ -78,6 +80,8 @@ export default function Projects({ color }) {
     slidesToScroll: 1,
   };
 
+  const filteredOtherProjects = selected === "Mostrar Todos" ? otherProjects : otherProjects.filter(project => project.tags.includes(selected));
+
   return (
     <>
       <Container maxW={"3xl"} id="projects">
@@ -105,10 +109,10 @@ export default function Projects({ color }) {
                       base: "column",
                     }}
                     overflow="hidden"
-                    height="450px" // Ajusta el tamaño del contenedor
+                    height="450px"
                   >
                     <Box position="relative">
-                      <Image objectFit="cover" src={project.image} height="200px" /> {/* Ajusta el tamaño de la imagen */}
+                      <Image objectFit="cover" src={project.image} height="200px" />
                       <IconButton
                         aria-label="Zoom image"
                         icon={<MdOutlineZoomOutMap />}
@@ -172,6 +176,99 @@ export default function Projects({ color }) {
               ))}
             </ButtonGroup>
           </Center>
+          {filteredOtherProjects.length > 1 ? (
+            <Slider {...settings}>
+              {filteredOtherProjects.map((project) => (
+                <Fade bottom key={project.name}>
+                  <Box px={2} position="relative">
+                    <Card
+                      direction={{
+                        base: "column",
+                      }}
+                      overflow="hidden"
+                      height="450px"
+                    >
+                      <Stack>
+                        <CardBody align="left">
+                          <Heading size="md">{project.name}</Heading>
+
+                          <Text py={2}>{project.description}</Text>
+
+                          <HStack py={2}>
+                            {project.buttons.map((button) => (
+                              <Link
+                                key={button.text}
+                                href={button.href}
+                                isExternal
+                                color={`${color}.400`}
+                              >
+                                {button.text}
+                              </Link>
+                            ))}
+                          </HStack>
+                          <HStack pt={4} spacing={2}>
+                            {project.badges.map((badge) => (
+                              <Badge
+                                key={badge.text}
+                                colorScheme={badge.colorScheme}
+                              >
+                                {badge.text}
+                              </Badge>
+                            ))}
+                          </HStack>
+                        </CardBody>
+                      </Stack>
+                    </Card>
+                  </Box>
+                </Fade>
+              ))}
+            </Slider>
+          ) : (
+            filteredOtherProjects.map((project) => (
+              <Fade bottom key={project.name}>
+                <Box px={2} position="relative">
+                  <Card
+                    direction={{
+                      base: "column",
+                    }}
+                    overflow="hidden"
+                    height="450px"
+                  >
+                    <Stack>
+                      <CardBody align="left">
+                        <Heading size="md">{project.name}</Heading>
+
+                        <Text py={2}>{project.description}</Text>
+
+                        <HStack py={2}>
+                          {project.buttons.map((button) => (
+                            <Link
+                              key={button.text}
+                              href={button.href}
+                              isExternal
+                              color={`${color}.400`}
+                            >
+                              {button.text}
+                            </Link>
+                          ))}
+                        </HStack>
+                        <HStack pt={4} spacing={2}>
+                          {project.badges.map((badge) => (
+                            <Badge
+                              key={badge.text}
+                              colorScheme={badge.colorScheme}
+                            >
+                              {badge.text}
+                            </Badge>
+                          ))}
+                        </HStack>
+                      </CardBody>
+                    </Stack>
+                  </Card>
+                </Box>
+              </Fade>
+            ))
+          )}
         </Stack>
       </Container>
 

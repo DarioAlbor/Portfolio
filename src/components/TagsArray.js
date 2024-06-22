@@ -5,7 +5,7 @@ const parseTags = (mdContent) => {
   const lines = mdContent.split("\n");
 
   for (let i = 0; i < lines.length; i++) {
-    const value = lines[i].trim(); // Eliminar espacios al principio y al final de la línea
+    const value = lines[i].trim();
 
     if (value) {
       tags.push({
@@ -20,7 +20,7 @@ const TagsArray = (file) => {
   const [Tags, setTags] = useState([]);
 
   useEffect(() => {
-    fetch(`../content/${file}.md`)
+    fetch(`/content/${file}.md`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to fetch markdown content");

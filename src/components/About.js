@@ -24,7 +24,7 @@ export default function About({ color }) {
                 <Text color={`${color}.400`} fontWeight={800}>
                   01
                 </Text>
-                <Text fontWeight={800}>Conocemé</Text>
+                <Text fontWeight={800}>Conóceme</Text>
               </HStack>
               <Divider orientation="horizontal" />
             </Stack>
