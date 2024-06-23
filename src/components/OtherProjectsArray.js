@@ -10,11 +10,22 @@ const parseOtherProjects = (mdContent) => {
     if (line.startsWith("## ")) {
       const name = line.substr(3).trim();
       const description = lines[++i].trim();
-      const tags = lines[++i].split(":")[1].trim();
+      const tags = lines[++i].split(":")[1].trim().split(", ");
       const badges = [];
-      const buttons = [];
+      let visitar = null;
+      let image = null;
 
-      while (lines[++i] && !lines[i].startsWith("- Lenguajes:")) {}
+      while (lines[++i] && !lines[i].startsWith("- Lenguajes:")) {
+        if (lines[i].startsWith("- Visitar:")) {
+          visitar = lines[i].split(":")[1].trim();
+          // Añadir prefijo http:// si no está presente
+          if (!/^https?:\/\//i.test(visitar)) {
+            visitar = `http://${visitar}`;
+          }
+        } else if (lines[i].startsWith("- Imagen:")) {
+          image = lines[i].split(":")[1].trim();
+        }
+      }
       while (lines[++i] && lines[i].startsWith("  - ")) {
         const badgeLine = lines[i].substr(4).split("[");
         const badgeName = badgeLine[0].trim();
@@ -22,23 +33,13 @@ const parseOtherProjects = (mdContent) => {
         badges.push({ text: badgeName, colorScheme: badgeColor });
       }
 
-      while (lines[++i] && lines[i].startsWith("- ")) {
-        if (lines[i].startsWith("- Buttons:")) {
-          while (lines[++i] && lines[i].startsWith("  - ")) {
-            const buttonLine = lines[i].substr(4).split("[");
-            const buttonText = buttonLine[0].trim();
-            const buttonHref = buttonLine[1].split("]")[0].trim();
-            buttons.push({ text: buttonText, href: buttonHref });
-          }
-        }
-      }
-
       others.push({
         name,
         description,
-        tags: [tags],
+        tags,
         badges,
-        buttons,
+        visitar,
+        image,
       });
     }
   }

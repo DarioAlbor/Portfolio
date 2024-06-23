@@ -68,3 +68,35 @@ Juego de aventura basado en elecciones.
 - Carrousel:
   - ![AG1](../assets/aterrizajeenelbosque/juego.png)
   - ![AG2](../assets/aterrizajeenelbosque/help.png)
+## ADVENTURE GAME
+Juego de aventura basado en elecciones.
+- ![AdventureGame](../assets/aterrizajeenelbosque/presentacion.png)
+- Tags: AG
+- Lenguajes:
+  - React.js [blue]
+  - Chakra UI [green]
+- Enlace: [https://github.com/DarioAlbor/AdventureGame](https://github.com/DarioAlbor/AdventureGame)
+- Enlace: [https://github.com/DarioAlbor/AdventureGame](https://github.com/DarioAlbor/AdventureGame)
+- Descripción detallada:
+  Imagina que sos parte de la tripulación de cabina en un vuelo que se estrelló en el bosque. Tendrás que tomar decisiones como equipo para navegar por el bosque, buscar agua, comida y refugio, y encontrar ayuda. Después de cada decisión, se presentará la siguiente situación basada en la decisión tomada anteriormente. Trabaja en equipo para tomar decisiones sabias y garantizar la supervivencia de todos los miembros de la tripulación y los pasajeros.
+- Carrousel:
+  - ![AG1](../assets/aterrizajeenelbosque/juego.png)
+  - ![AG2](../assets/aterrizajeenelbosque/help.png)
+## CHAT ONLINE
+Chat Online donde puedes registrarte, iniciar sesión e interactuar con otros usuarios, estén conectados o no
+- ![ChatOnline](../assets/chatonline/chat.png)
+- Tags: CO
+- Lenguajes:
+  - React.js [blue]
+  - Node.js [green]
+  - Socket.io [yellow]
+  - MongoDB [purple]
+- Enlace: [https://github.com/DarioAlbor/ChatOnline](https://github.com/DarioAlbor/ChatOnline)
+- Enlace: [https://github.com/DarioAlbor/ChatOnline](https://github.com/DarioAlbor/ChatOnline)
+- Descripción detallada:
+  Este proyecto es un Chat Online donde puedes registrarte, iniciar sesión e interactuar con otros usuarios, estén conectados o no. Utiliza un mecanismo sencillo para la comunicación entre el cliente y el servidor, garantizando una experiencia fluida y eficiente.
+- Carrousel:
+  - ![CO1](../assets/chatonline/login.png)
+  - ![CO2](../assets/chatonline/register.png)
+  - ![CO3](../assets/chatonline/icons.png)
+  - ![CO4](../assets/chatonline/chat.png)

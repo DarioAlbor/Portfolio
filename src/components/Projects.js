@@ -176,9 +176,80 @@ export default function Projects({ color }) {
               ))}
             </ButtonGroup>
           </Center>
-          {filteredOtherProjects.length > 1 ? (
-            <Slider {...settings}>
-              {filteredOtherProjects.map((project) => (
+          <Box w="full">
+            {filteredOtherProjects.length > 1 ? (
+              <Slider {...settings}>
+                {filteredOtherProjects.map((project) => (
+                  <Fade bottom key={project.name}>
+                    <Box px={2} position="relative" height="auto">
+                      <Card
+                        direction={{
+                          base: "column",
+                        }}
+                        overflow="hidden"
+                        height="100%"
+                      >
+                        <Box position="relative">
+                          {project.image && (
+                            <Image objectFit="cover" src={project.image} height="200px" />
+                          )}
+                          {project.image && (
+                            <IconButton
+                              aria-label="Zoom image"
+                              icon={<MdOutlineZoomOutMap />}
+                              size="sm"
+                              position="absolute"
+                              bottom="10px"
+                              right="10px"
+                              backgroundColor="rgba(0, 0, 0, 0.5)"
+                              color="white"
+                              onClick={() => handleZoomOpen(project.image)}
+                            />
+                          )}
+                        </Box>
+                        <Stack height="100%">
+                          <CardBody align="left">
+                            <Heading size="md">{project.name}</Heading>
+
+                            <Text py={2}>{project.description}</Text>
+
+                            {project.visitar && (
+                              <Center py={2}>
+                                <Link
+                                  href={project.visitar}
+                                  isExternal
+                                  color={`${color}.400`}
+                                >
+                                  <Button
+                                    leftIcon={<Icon as={FaExternalLinkAlt} />}
+                                    colorScheme="gray"
+                                    variant="solid"
+                                  >
+                                    VISITAR
+                                  </Button>
+                                </Link>
+                              </Center>
+                            )}
+
+                            <HStack pt={4} spacing={2}>
+                              {project.badges.map((badge) => (
+                                <Badge
+                                  key={badge.text}
+                                  colorScheme={badge.colorScheme}
+                                >
+                                  {badge.text}
+                                </Badge>
+                              ))}
+                            </HStack>
+                          </CardBody>
+                        </Stack>
+                      </Card>
+                    </Box>
+                  </Fade>
+                ))}
+              </Slider>
+            ) : (
+              filteredOtherProjects.map((project) => (
                 <Fade bottom key={project.name}>
                   <Box px={2} position="relative">
                     <Card
@@ -186,26 +257,50 @@ export default function Projects({ color }) {
                         base: "column",
                       }}
                       overflow="hidden"
-                      height="450px"
+                      height="100%"
                     >
-                      <Stack>
+                      <Box position="relative">
+                        {project.image && (
+                          <Image objectFit="cover" src={project.image} height="200px" />
+                        )}
+                        {project.image && (
+                          <IconButton
+                            aria-label="Zoom image"
+                            icon={<MdOutlineZoomOutMap />}
+                            size="sm"
+                            position="absolute"
+                            bottom="10px"
+                            right="10px"
+                            backgroundColor="rgba(0, 0, 0, 0.5)"
+                            color="white"
+                            onClick={() => handleZoomOpen(project.image)}
+                          />
+                        )}
+                      </Box>
+                      <Stack height="100%">
                         <CardBody align="left">
                           <Heading size="md">{project.name}</Heading>
 
                           <Text py={2}>{project.description}</Text>
 
-                          <HStack py={2}>
-                            {project.buttons.map((button) => (
+                          {project.visitar && (
+                            <Center py={2}>
                               <Link
-                                key={button.text}
-                                href={button.href}
+                                href={project.visitar}
                                 isExternal
                                 color={`${color}.400`}
                               >
-                                {button.text}
+                                <Button
+                                  leftIcon={<Icon as={FaExternalLinkAlt} />}
+                                  colorScheme="gray"
+                                  variant="solid"
+                                >
+                                  VISITAR
+                                </Button>
                               </Link>
-                            ))}
-                          </HStack>
+                            </Center>
+                          )}
+
                           <HStack pt={4} spacing={2}>
                             {project.badges.map((badge) => (
                               <Badge
@@ -221,54 +316,9 @@ export default function Projects({ color }) {
                     </Card>
                   </Box>
                 </Fade>
-              ))}
-            </Slider>
-          ) : (
-            filteredOtherProjects.map((project) => (
-              <Fade bottom key={project.name}>
-                <Box px={2} position="relative">
-                  <Card
-                    direction={{
-                      base: "column",
-                    }}
-                    overflow="hidden"
-                    height="450px"
-                  >
-                    <Stack>
-                      <CardBody align="left">
-                        <Heading size="md">{project.name}</Heading>
-
-                        <Text py={2}>{project.description}</Text>
-
-                        <HStack py={2}>
-                          {project.buttons.map((button) => (
-                            <Link
-                              key={button.text}
-                              href={button.href}
-                              isExternal
-                              color={`${color}.400`}
-                            >
-                              {button.text}
-                            </Link>
-                          ))}
-                        </HStack>
-                        <HStack pt={4} spacing={2}>
-                          {project.badges.map((badge) => (
-                            <Badge
-                              key={badge.text}
-                              colorScheme={badge.colorScheme}
-                            >
-                              {badge.text}
-                            </Badge>
-                          ))}
-                        </HStack>
-                      </CardBody>
-                    </Stack>
-                  </Card>
-                </Box>
-              </Fade>
-            ))
-          )}
+              ))
+            )}
+          </Box>
         </Stack>
       </Container>
 
