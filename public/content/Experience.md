@@ -11,7 +11,6 @@
   - Desarrollo de e-commerce, adaptado a las necesidades de la empresa utilizando los datos en tiempo real del sistema COBOL.
   - Desarrollo de aplicación web estilo "Portal Administrativo" orientado a funcionar como UI para la visualización y modificación de datos en el sistema COBOL, con objetivo a automatizar procesos internos y del sistema base.
   - Automatización constante del proceso interno de actualización de precios diarios. Tomando los mismos desde el registro nacional de precios (Alfabeta) para posteriormente adaptarlos al sistema COBOL.
-  - Enlaces de utilidad: www.portal.drogueriagarzon.com
 
 ## Vefixy
 - *Backend* | Ene'23 - Jun'24

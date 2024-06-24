@@ -38,3 +38,13 @@ Vefixy es una pequeña desarrolladora de productos y servicios. Además de encar
   - SEO [pink]
   - Responsive Design [green]
   - MongoDB [yellow]
+
+## GoPymes
+CRM diseñado para empresas argentinas, permitiendo una gestión ágil y eficiente de tus procesos empresariales. Me encargué de su Landing Page.
+- Tags: Landing Page
+- Imagen: ../assets/otherprojects/gopymes.png
+- Visitar: www.gopymes.vefixy.com
+- Lenguajes:
+  - React.js [blue]
+  - SEO [pink]
+  - Responsive Design [green]
