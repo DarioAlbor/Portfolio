@@ -191,7 +191,7 @@ export default function Projects({ color }) {
                       >
                         <Box position="relative">
                           {project.image && (
-                            <Image objectFit="cover" src={project.image} height="200px" />
+                            <Image objectFit="cover" src={project.image} maxH="auto" maxW="auto" />
                           )}
                           {project.image && (
                             <IconButton
@@ -261,7 +261,7 @@ export default function Projects({ color }) {
                     >
                       <Box position="relative">
                         {project.image && (
-                          <Image objectFit="cover" src={project.image} height="200px" />
+                          <Image objectFit="cover" src={project.image} maxH="400px" maxW="100%" />
                         )}
                         {project.image && (
                           <IconButton
@@ -332,7 +332,7 @@ export default function Projects({ color }) {
               <Slider {...modalSettings}>
                 {modalContent.carrouselImages.map((image, index) => (
                   <Box key={index} position="relative">
-                    <Image src={image} alt={`${modalContent.name} image ${index + 1}`} />
+                    <Image src={image} alt={`${modalContent.name} image ${index + 1}`} maxH="auto" maxW="100%" />
                     <IconButton
                       aria-label="Zoom image"
                       icon={<MdOutlineZoomOutMap />}
@@ -350,7 +350,7 @@ export default function Projects({ color }) {
             ) : (
               modalContent.carrouselImages && modalContent.carrouselImages.length === 1 && (
                 <Box position="relative">
-                  <Image src={modalContent.carrouselImages[0]} alt={modalContent.name} />
+                  <Image src={modalContent.carrouselImages[0]} alt={modalContent.name} maxH="400px" maxW="100%" />
                   <IconButton
                     aria-label="Zoom image"
                     icon={<MdOutlineZoomOutMap />}

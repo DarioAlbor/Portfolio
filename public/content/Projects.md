@@ -68,20 +68,6 @@ Juego de aventura basado en elecciones.
 - Carrousel:
   - ![AG1](../assets/aterrizajeenelbosque/juego.png)
   - ![AG2](../assets/aterrizajeenelbosque/help.png)
-## ADVENTURE GAME
-Juego de aventura basado en elecciones.
-- ![AdventureGame](../assets/aterrizajeenelbosque/presentacion.png)
-- Tags: AG
-- Lenguajes:
-  - React.js [blue]
-  - Chakra UI [green]
-- Enlace: [https://github.com/DarioAlbor/AdventureGame](https://github.com/DarioAlbor/AdventureGame)
-- Enlace: [https://github.com/DarioAlbor/AdventureGame](https://github.com/DarioAlbor/AdventureGame)
-- Descripción detallada:
-  Imagina que sos parte de la tripulación de cabina en un vuelo que se estrelló en el bosque. Tendrás que tomar decisiones como equipo para navegar por el bosque, buscar agua, comida y refugio, y encontrar ayuda. Después de cada decisión, se presentará la siguiente situación basada en la decisión tomada anteriormente. Trabaja en equipo para tomar decisiones sabias y garantizar la supervivencia de todos los miembros de la tripulación y los pasajeros.
-- Carrousel:
-  - ![AG1](../assets/aterrizajeenelbosque/juego.png)
-  - ![AG2](../assets/aterrizajeenelbosque/help.png)
 ## CHAT ONLINE
 Chat Online donde puedes registrarte, iniciar sesión e interactuar con otros usuarios, estén conectados o no
 - ![ChatOnline](../assets/chatonline/chat.png)
@@ -100,3 +86,21 @@ Chat Online donde puedes registrarte, iniciar sesión e interactuar con otros us
   - ![CO2](../assets/chatonline/register.png)
   - ![CO3](../assets/chatonline/icons.png)
   - ![CO4](../assets/chatonline/chat.png)
+## CHALLENGE POKEMON
+¡Selecciona tu Pokémon favorito y participa en emocionantes batallas estratégicas! 🚀
+- ![ChallengePokemon](../assets/challengepokemon/index.png)
+- Tags: Pokemon
+- Lenguajes:
+  - React.js [blue]
+  - Nest.js [red]
+  - Material-UI [green]
+  - SQLite [purple]
+- Enlace: [https://github.com/DarioAlbor/ChallengePokemon](https://github.com/DarioAlbor/ChallengePokemon)
+- Enlace: [https://github.com/DarioAlbor/ChallengePokemon](https://github.com/DarioAlbor/ChallengePokemon)
+- Descripción detallada:
+Este proyecto es un juego de batalla entre pokémones donde los jugadores pueden seleccionar sus pokémones y enfrentarse en una batalla estratégica. Utiliza un algoritmo específico para determinar el ganador basado en las estadísticas de los pokémones.
+- Carrousel:
+  - ![PK1](../assets/challengepokemon/index.png)
+  - ![PK2](../assets/challengepokemon/selectpokemon.png)
+  - ![PK3](../assets/challengepokemon/battle.png)
+  - ![PK4](../assets/challengepokemon/winner.png)
