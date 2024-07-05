@@ -48,3 +48,13 @@ CRM diseñado para empresas argentinas, permitiendo una gestión ágil y eficien
   - React.js [blue]
   - SEO [pink]
   - Responsive Design [green]
+
+## Profile Social Media
+Una página de perfil inspirada en las redes sociales modernas, usando transiciones y componentes simples vanilla. 📱🚀
+- Tags: Landing Page
+- Imagen: ../assets/otherprojects/profilesocialmedia.png
+- Visitar: www.github.com/DarioAlbor/profilesocialmedia
+- Lenguajes:
+  - Next.js [blue]
+  - Responsive Design [red]
+  - CSS Modules [purple]

@@ -86,3 +86,22 @@ Este proyecto es un juego de batalla entre pokémones donde los jugadores pueden
   - ![PK4](../assets/challengepokemon/winner.png)
 ##
 ##
+## SIMPLE AUTH
+SimpleAuth es un proyecto utilizando el manejo de autentificación y sesiones. 🔒
+- ![SimpleAuth](../assets/simpleauth/index.png)
+- Tags: SimpleAuth
+- Lenguajes:
+  - React.js [blue]
+  - Node.js [yellow]
+  - Chakra-UI [red]
+  - MongoDB [green]
+  - JWT [purple]
+- Enlace: [https://github.com/DarioAlbor/SimpleAuth](https://github.com/DarioAlbor/SimpleAuth)
+- Enlace: [https://github.com/DarioAlbor/SimpleAuth](https://github.com/DarioAlbor/SimpleAuth)
+- Descripción detallada:
+SimpleAuth es un proyecto utilizando el manejo de autentificación y sesiones, permitiendo el registro, ingreso y sesiones activas y seguras utilizando JWT. También permitiendo la opción de cambiar la imagen de perfil, contraseña (cifrada con hash MD5), visualización en tiempo real de usuarios conectados/desconectados.
+- Carrousel:
+  - ![SA1](../assets/simpleauth/index.png)
+  - ![SA2](../assets/simpleauth/signin.png)
+  - ![SA3](../assets/simpleauth/signup.png)
+  - ![SA4](../assets/simpleauth/changeimage.png)
