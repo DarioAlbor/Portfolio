@@ -43,7 +43,7 @@
   - SEO [yellow]
   - PHP [white]
   - WORDPRESS [red]
-  - JAVASCRIPT (React, Next, Chakra, Tailwand) [yellow]
+  - JAVASCRIPT (React, VUE, Next, Chakra, Tailwand) [yellow]
 - List Items:
   - Lideré iniciativas de posicionamiento SEO para la marca y sus productos, lo que resultó en una mayor visibilidad en los motores de búsqueda y un mayor tráfico orgánico hacia el sitio web.
   - Desarrollé y gestioné campañas publicitarias utilizando Meta ADS y Google Ads, con el objetivo de posicionar las marcas en todo el país y llegar a una audiencia más amplia y específica captando ventas.

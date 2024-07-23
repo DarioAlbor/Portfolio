@@ -105,3 +105,21 @@ SimpleAuth es un proyecto utilizando el manejo de autentificación y sesiones, p
   - ![SA2](../assets/simpleauth/signin.png)
   - ![SA3](../assets/simpleauth/signup.png)
   - ![SA4](../assets/simpleauth/changeimage.png)
+##
+##
+## TO-DO APP
+To Do App es una aplicación que te ayuda a organizar y gestionar tus tareas diarias de manera eficiente. 🕒✅
+- ![ToDoApp](../assets/todoapp/1.png)
+- Tags: ToDoApp
+- Lenguajes:
+  - Vue.js [green]
+  - TailwindCSS [purple]
+  - Responsive Design [yellow]
+- Enlace: [https://github.com/DarioAlbor/ToDo-App](https://github.com/DarioAlbor/ToDo-App)
+- Enlace: [https://github.com/DarioAlbor/ToDo-App](https://github.com/DarioAlbor/ToDo-App)
+- Descripción detallada:
+To-Do App es un proyecto utilizando Vue.js en el cual podrás sumar tareas, crear categorías personalizadas o utilizar las que vienen por defecto. Tiene un manejo de estado y variables eficientes, pero no cuenta con almacenaje local ni backend.
+- Carrousel:
+  - ![TODO1](../assets/todoapp/1.png)
+  - ![TODO2](../assets/todoapp/2.png)
+  - ![TODO3](../assets/todoapp/3.png)
