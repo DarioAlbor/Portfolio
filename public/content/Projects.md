@@ -123,3 +123,22 @@ To-Do App es un proyecto utilizando Vue.js en el cual podrás sumar tareas, crea
   - ![TODO1](../assets/todoapp/1.png)
   - ![TODO2](../assets/todoapp/2.png)
   - ![TODO3](../assets/todoapp/3.png)
+##
+##
+## TIC TAC TOE
+El famoso juego TIC-TAC-TOE recreado usando Angular 17 ⭕❌
+- ![TICTACTOE](../assets/tictactoe/4.png)
+- Tags: TICTACTOE
+- Lenguajes:
+  - Angular [red]
+  - SCSS [pink]
+  - TypeScript [blue]
+  - Responsive Design [yellow]
+- Enlace: [https://github.com/DarioAlbor/tictactoechallenge](https://github.com/DarioAlbor/tictactoechallenge)
+- Enlace: [https://github.com/DarioAlbor/tictactoechallenge](https://github.com/DarioAlbor/tictactoechallenge)
+- Descripción detallada:
+Tic-Tac-Toe o conocido también como tateti, es una recreación del famoso juego utilizando Angular 17. En este codigo me centre en la logica del mismo y no en el diseño, es por eso que visualmente no resulta atractivo, sin embargo cumple con las practicas para hacerlo responsive.
+- Carrousel:
+  - ![TTT1](../assets/tictactoe/1.png)
+  - ![TTT2](../assets/tictactoe/2.png)
+  - ![TTT3](../assets/tictactoe/3.png)
