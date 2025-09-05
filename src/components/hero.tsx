@@ -27,7 +27,7 @@ const Hero: React.FC = () => {
                     animate={{ y: 0 }}
                     className="text-2xl text-gray-400"
                 >
-                    Desarrollador Full Stack
+                    Desarrollador
                 </motion.h2>
             </div>
         </motion.section>
