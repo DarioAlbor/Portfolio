@@ -1,0 +1,19 @@
+TEAM
+Developer: Dario Albor
+Contact: dario@vefixy.com
+Twitter: @darioalbor
+From: Argentina
+
+THANKS
+React Team
+Tailwind CSS Team
+Framer Motion Team
+Heroicons Team
+GitHub API
+
+SITE
+Last update: 2025/01/01
+Language: Spanish / English
+Doctype: HTML5
+IDE: Cursor, VS Code
+Technologies: React, TypeScript, Tailwind CSS, Framer Motion, Node.js

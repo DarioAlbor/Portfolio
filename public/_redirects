@@ -1,0 +1,12 @@
+http://darioalbor.dev.ar/* https://darioalbor.dev.ar/:splat 301!
+http://www.darioalbor.dev.ar/* https://darioalbor.dev.ar/:splat 301!
+https://www.darioalbor.dev.ar/* https://darioalbor.dev.ar/:splat 301!
+
+/*    /index.html   200
+
+/api/*  https://api.darioalbor.dev.ar/:splat  200
+
+/portfolio  /#projects  301
+/about      /#about     301
+/contact    /#contact   301
+/resume     /cv.pdf     301
