@@ -77,7 +77,7 @@ const Projects: React.FC = () => {
   }, [isLoading, repos.length]);
 
   return (
-    <section id="projects" className="py-20" style={{ backgroundColor: 'oklch(0.40 0 0 / 0.01)', overflow: 'visible' }}>
+    <section id="projects" className="py-20 bg-gradient-to-b from-gray-900/16 via-gray-900/18 to-gray-900/20" style={{ backgroundColor: 'oklch(0.40 0 0 / 0.01)', overflow: 'visible' }}>
       <div className="container mx-auto px-6" style={{ overflow: 'visible' }}>
         <motion.div
           initial={{ opacity: 0, y: 50 }}

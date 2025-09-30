@@ -10,7 +10,7 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
-            className="relative min-h-screen flex items-center justify-center bg-[#0a0a0a] text-white overflow-hidden"
+            className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-[#0a0a0a] via-[#0a0a0a] to-transparent text-white overflow-hidden"
         >
             <Stars />
             <Meteor />

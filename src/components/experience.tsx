@@ -33,7 +33,7 @@ const ExperienceSection: React.FC = () => {
     ];
 
     return (
-        <section id="experience" className="py-20">
+        <section id="experience" className="py-20 bg-gradient-to-b from-gray-900/8 via-gray-900/12 to-gray-900/16">
             <div className="container mx-auto px-6">
                 <motion.div
                     initial={{ opacity: 0, y: 50 }}
