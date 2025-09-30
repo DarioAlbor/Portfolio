@@ -1,10 +1,12 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import React, { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const Navbar: React.FC = () => {
     const [hasScrolled, setHasScrolled] = useState(false);
     const { scrollY } = useScroll();
     const glowOpacity = useTransform(scrollY, [0, 100], [0, 0.15]);
+    const { t, i18n } = useTranslation();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -16,11 +18,15 @@ const Navbar: React.FC = () => {
     }, []);
 
     const navItems = [
-        { href: "#about", text: "Sobre mí" },
-        { href: "#experience", text: "Experiencia" },
-        { href: "#projects", text: "Proyectos" },
-        { href: "#contact", text: "Contacto" }
+        { href: "#about", text: t('navbar.about') },
+        { href: "#experience", text: t('navbar.experience') },
+        { href: "#projects", text: t('navbar.projects') },
+        { href: "#contact", text: t('navbar.contact') }
     ] as const;
+
+    const changeLanguage = (lng: string) => {
+        i18n.changeLanguage(lng);
+    };
 
     return (
         <motion.header 
@@ -80,6 +86,44 @@ const Navbar: React.FC = () => {
                             />
                         </motion.a>
                     ))}
+
+                    <div className="w-px h-6 bg-white/10" />
+                    
+                    {/* Language Selector */}
+                    <div className="flex items-center space-x-2">
+                        <motion.button
+                            onClick={() => changeLanguage('en')}
+                            className={`relative w-8 h-6 rounded-sm overflow-hidden border transition-all duration-200 ${
+                                i18n.language === 'en' ? 'border-blue-400 shadow-lg shadow-blue-400/50' : 'border-white/20 hover:border-white/40'
+                            }`}
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.95 }}
+                            title="English"
+                        >
+                            <img 
+                                src="https://flagicons.lipis.dev/flags/4x3/gb.svg" 
+                                alt="English"
+                                className="w-full h-full object-cover"
+                            />
+                        </motion.button>
+                        <motion.button
+                            onClick={() => changeLanguage('es')}
+                            className={`relative w-8 h-6 rounded-sm overflow-hidden border transition-all duration-200 ${
+                                i18n.language === 'es' ? 'border-blue-400 shadow-lg shadow-blue-400/50' : 'border-white/20 hover:border-white/40'
+                            }`}
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.95 }}
+                            title="Español"
+                        >
+                            <img 
+                                src="https://flagicons.lipis.dev/flags/4x3/es.svg" 
+                                alt="Español"
+                                className="w-full h-full object-cover"
+                            />
+                        </motion.button>
+                    </div>
+                    
+                    <div className="w-px h-6 bg-white/10" />
                     
                     <motion.div
                         className="relative"
@@ -128,7 +172,7 @@ const Navbar: React.FC = () => {
                                 rel="noopener noreferrer"
                                 className="block w-full h-full"
                             >
-                                Descargar CV
+                                {t('footer.navigation.cv')}
                             </a>
                         </motion.div>
                     </motion.div>

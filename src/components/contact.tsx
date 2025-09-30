@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { ContactForm } from '../types';
 import { EnvelopeIcon } from '@heroicons/react/24/outline';
 
@@ -24,6 +25,7 @@ declare global {
 }
 
 const Contact: React.FC = () => {
+    const { t } = useTranslation();
     const [formData, setFormData] = useState<ContactForm>({
         name: '',
         email: '',
@@ -110,9 +112,9 @@ const Contact: React.FC = () => {
                     transition={{ duration: 0.5 }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-4xl font-bold mb-4 text-balance text-white">Contacto</h2>
+                    <h2 className="text-4xl font-bold mb-4 text-balance text-white">{t('contact.title')}</h2>
                     <p className="text-lg text-gray-400 text-pretty">
-                        Si necesitas contactarme, no dudes en escribirme
+                        {t('contact.description')}
                     </p>
                 </motion.div>
 
@@ -127,22 +129,22 @@ const Contact: React.FC = () => {
                         <form onSubmit={handleSubmit} className="space-y-6">
                             <div className="grid md:grid-cols-2 gap-4">
                                 <div>
-                                    <label className="block text-sm font-medium mb-2 text-gray-300">Nombre</label>
+                                    <label className="block text-sm font-medium mb-2 text-gray-300">{t('contact.form.name')}</label>
                                     <input
                                         type="text"
                                         className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
-                                        placeholder="Tu nombre"
+                                        placeholder={t('contact.form.namePlaceholder')}
                                         value={formData.name}
                                         onChange={(e) => setFormData({...formData, name: e.target.value})}
                                         required
                                     />
                                 </div>
                                 <div>
-                                    <label className="block text-sm font-medium mb-2 text-gray-300">Email</label>
+                                    <label className="block text-sm font-medium mb-2 text-gray-300">{t('contact.form.email')}</label>
                                     <input
                                         type="email"
                                         className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
-                                        placeholder="tu@email.com"
+                                        placeholder={t('contact.form.emailPlaceholder')}
                                         value={formData.email}
                                         onChange={(e) => setFormData({...formData, email: e.target.value})}
                                         required
@@ -150,11 +152,11 @@ const Contact: React.FC = () => {
                                 </div>
                             </div>
                             <div>
-                                <label className="block text-sm font-medium mb-2 text-gray-300">Mensaje</label>
+                                <label className="block text-sm font-medium mb-2 text-gray-300">{t('contact.form.message')}</label>
                                 <textarea
                                     rows={5}
                                     className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 resize-none"
-                                    placeholder="Cuéntame sobre tu proyecto..."
+                                    placeholder={t('contact.form.messagePlaceholder')}
                                     value={formData.message}
                                     onChange={(e) => setFormData({...formData, message: e.target.value})}
                                     required
@@ -177,12 +179,12 @@ const Contact: React.FC = () => {
                             >
                                 <EnvelopeIcon className="w-5 h-5" />
                                 {isSubmitting 
-                                    ? 'Enviando...' 
+                                    ? t('contact.form.sending') 
                                     : submitStatus === 'success'
-                                    ? 'Mensaje enviado!'
+                                    ? t('contact.form.sent')
                                     : submitStatus === 'error'
-                                    ? 'Error - Reintentar'
-                                    : 'Enviar mensaje'}
+                                    ? t('contact.form.error')
+                                    : t('contact.form.send')}
                             </motion.button>
                             
                             {submitStatus === 'success' && (
@@ -191,7 +193,7 @@ const Contact: React.FC = () => {
                                     animate={{ opacity: 1, y: 0 }}
                                     className="text-center text-green-400 text-sm mt-2"
                                 >
-                                    ¡Gracias! Tu mensaje ha sido enviado correctamente.
+                                    {t('contact.form.successMessage')}
                                 </motion.div>
                             )}
                             
@@ -201,30 +203,30 @@ const Contact: React.FC = () => {
                                     animate={{ opacity: 1, y: 0 }}
                                     className="text-center text-red-400 text-sm mt-2"
                                 >
-                                    Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo.
+                                    {t('contact.form.errorMessage')}
                                 </motion.div>
                             )}
                             
                             <div className="text-center text-xs text-gray-500 mt-4">
-                                Este sitio está protegido por reCAPTCHA y se aplican la{' '}
+                                {t('contact.recaptcha')}{' '}
                                 <a 
                                     href="https://policies.google.com/privacy" 
                                     target="_blank" 
                                     rel="noopener noreferrer"
                                     className="text-blue-400 hover:text-blue-300 underline"
                                 >
-                                    Política de privacidad
+                                    {t('contact.privacyPolicy')}
                                 </a>{' '}
-                                y los{' '}
+                                {t('contact.termsOfService')}{' '}
                                 <a 
                                     href="https://policies.google.com/terms" 
                                     target="_blank" 
                                     rel="noopener noreferrer"
                                     className="text-blue-400 hover:text-blue-300 underline"
                                 >
-                                    Términos de servicio
+                                    {t('contact.termsOfService')}
                                 </a>{' '}
-                                de Google.
+                                {t('contact.googleText')}
                             </div>
                         </form>
 

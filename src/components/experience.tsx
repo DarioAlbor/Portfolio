@@ -1,33 +1,36 @@
 import { motion } from 'framer-motion';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 const ExperienceSection: React.FC = () => {
+    const { t } = useTranslation();
+    
     const experiences = [
         {
-            title: "Software Developer",
-            company: "Vefixy",
+            title: t('experience.jobs.vefixy.title'),
+            company: t('experience.jobs.vefixy.company'),
             companyUrl: "https://vefixy.com",
-            period: "Ago 2024 - Actualidad",
-            duration: "1 año 2 meses",
-            description: "Desarrollo de soluciones web full-stack para múltiples clientes en consultora de software. Especializado en arquitecturas escalables con NestJS, React, Vue y Redux. Diseño e implementación de bases de datos con PostgreSQL, MongoDB y Redis para aplicaciones empresariales.",
+            period: t('experience.jobs.vefixy.period'),
+            duration: t('experience.jobs.vefixy.duration'),
+            description: t('experience.jobs.vefixy.description'),
             technologies: ["NestJS", "Node.js", "React.js", "Next.js", "Vue", "Redux", "PostgreSQL", "MongoDB", "Redis", "RabbitMQ", "Apache Kafka", "Java"]
         },
         {
-            title: "Software Developer",
-            company: "Droguería Garzón",
+            title: t('experience.jobs.garzon.title'),
+            company: t('experience.jobs.garzon.company'),
             companyUrl: "https://drogueriagarzon.com",
-            period: "Ene 2022 - Ago 2024",
-            duration: "2 años 8 meses",
-            description: "Lideré la migración completa de sistemas legacy a tecnologías modernas. Desarrollé APIs para integración con sistemas COBOL, e-commerce completo y portal empresarial. Implementé procesos ETL y automatización empresarial.",
+            period: t('experience.jobs.garzon.period'),
+            duration: t('experience.jobs.garzon.duration'),
+            description: t('experience.jobs.garzon.description'),
             technologies: ["Node.js", "React.js", "Next.js", "MySQL", "Python", "Power BI"]
         },
         {
-            title: "Frontend Developer",
-            company: "Laboratorio Albula S.R.L",
+            title: t('experience.jobs.albula.title'),
+            company: t('experience.jobs.albula.company'),
             companyUrl: "https://albula.ar",
-            period: "Ene 2021 - Ene 2022",
-            duration: "1 año",
-            description: "Especializado en desarrollo de landing pages y estrategias SEO. Lideré campañas publicitarias con Meta Ads y Google Ads, colaborando estrechamente con equipos de marketing para fortalecer la presencia digital de la marca.",
+            period: t('experience.jobs.albula.period'),
+            duration: t('experience.jobs.albula.duration'),
+            description: t('experience.jobs.albula.description'),
             technologies: ["React.js", "Vue", "JavaScript", "WordPress", "Google Ads", "Meta Ads", "SEO"]
         },
     ];
@@ -42,9 +45,9 @@ const ExperienceSection: React.FC = () => {
                     transition={{ duration: 0.5 }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-4xl font-bold mb-4 text-balance text-white">Experiencia</h2>
+                    <h2 className="text-4xl font-bold mb-4 text-balance text-white">{t('experience.title')}</h2>
                     <p className="text-lg text-gray-400 text-pretty">
-                        Trayectoria enfocada en el desarrollo de arquitecturas robustas y la implementación de soluciones empresariales de alta complejidad
+                        {t('experience.description')}
                     </p>
                 </motion.div>
 

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { 
     ComputerDesktopIcon,
     CodeBracketIcon,
@@ -9,16 +10,18 @@ import {
     BoltIcon
 } from '@heroicons/react/24/outline';
 
-const skills = [
-    { Icon: ComputerDesktopIcon, title: "Frontend", items: ["React", "Next.js", "Vue.js", "Astro", "JavaScript (ES6+)", "TypeScript", "Tailwind CSS", "Bootstrap", "Chakra UI"] },
-    { Icon: CodeBracketIcon, title: "Backend", items: ["Node.js", "NestJS", "Python", "Java"] },
-    { Icon: CircleStackIcon, title: "Bases de Datos", items: ["PostgreSQL", "MongoDB", "MySQL", "Redis"] },
-    { Icon: BoltIcon, title: "Eventos", items: ["Apache Kafka", "RabbitMQ"] },
-    { Icon: CloudIcon, title: "Cloud & DevOps", items: ["AWS", "Docker", "Kubernetes", "Vercel", "CI/CD", "Git", "Entorno Atlassian"] },
-    { Icon: PaintBrushIcon, title: "UI & UX", items: ["Figma", "Adobe XD", "UI/UX", "Responsive Design"] }
-];
-
 const AboutMe: React.FC = () => {
+    const { t } = useTranslation();
+    
+    const skills = [
+        { Icon: ComputerDesktopIcon, title: t('about.skills.frontend.title'), items: t('about.skills.frontend.items', { returnObjects: true }) },
+        { Icon: CodeBracketIcon, title: t('about.skills.backend.title'), items: t('about.skills.backend.items', { returnObjects: true }) },
+        { Icon: CircleStackIcon, title: t('about.skills.database.title'), items: t('about.skills.database.items', { returnObjects: true }) },
+        { Icon: BoltIcon, title: t('about.skills.events.title'), items: t('about.skills.events.items', { returnObjects: true }) },
+        { Icon: CloudIcon, title: t('about.skills.cloud.title'), items: t('about.skills.cloud.items', { returnObjects: true }) },
+        { Icon: PaintBrushIcon, title: t('about.skills.uiux.title'), items: t('about.skills.uiux.items', { returnObjects: true }) }
+    ];
+
     return (
         <section id="about" className="py-20 bg-gradient-to-b from-transparent via-gray-900/5 to-gray-900/8" style={{ backgroundColor: 'oklch(0.40 0 0 / 0.01)' }}>
             <div className="container mx-auto px-6">
@@ -29,9 +32,9 @@ const AboutMe: React.FC = () => {
                     transition={{ duration: 0.5 }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-4xl font-bold mb-4 text-balance text-white">Sobre mí</h2>
+                    <h2 className="text-4xl font-bold mb-4 text-balance text-white">{t('about.title')}</h2>
                     <p className="text-lg text-gray-400 max-w-2xl mx-auto text-pretty">
-                        Especializado en transformar requerimientos de negocio complejos en plataformas de software robustas. Mi foco es la escalabilidad, la alta disponibilidad y la eficiencia.
+                        {t('about.description')}
                     </p>
                 </motion.div>
 
@@ -47,7 +50,7 @@ const AboutMe: React.FC = () => {
                                 <h3 className="text-xl font-bold text-white mb-4">{title}</h3>
                             </div>
                             <div className="flex flex-wrap gap-2 justify-center">
-                                {items.map(item => (
+                                {(items as string[]).map(item => (
                                     <span key={item} className="px-3 py-1 bg-gray-700/50 text-gray-300 rounded-full text-sm">
                                         {item}
                                     </span>

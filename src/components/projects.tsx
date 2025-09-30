@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { fetchGitHubRepos } from '../api/github';
 import { GitHubRepo } from '../types/github';
 import { motion } from 'framer-motion';
@@ -20,6 +21,7 @@ const GitHubIcon = () => (
 );
 
 const Projects: React.FC = () => {
+  const { t } = useTranslation();
   const [repos, setRepos] = useState<GitHubRepo[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const username = process.env.REACT_APP_GITHUB_USERNAME;
@@ -86,9 +88,9 @@ const Projects: React.FC = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold mb-4 text-balance text-white">Proyectos</h2>
+          <h2 className="text-4xl font-bold mb-4 text-balance text-white">{t('projects.title')}</h2>
           <p className="text-lg text-gray-400 text-pretty">
-            Repositorios de GitHub que muestran mi experiencia en diferentes tecnologías
+            {t('projects.description')}
           </p>
         </motion.div>
 
@@ -137,7 +139,7 @@ const Projects: React.FC = () => {
                         <div className="mb-3">
                           <h3 className="text-lg font-bold text-white mb-2 truncate">{repo.name}</h3>
                           <p className="text-gray-300 text-sm leading-relaxed line-clamp-3 flex-grow">
-                            {repo.description || 'Sin descripción disponible'}
+                            {repo.description || t('projects.noDescription')}
                           </p>
                         </div>
 
@@ -176,7 +178,7 @@ const Projects: React.FC = () => {
                             className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2 bg-transparent border border-gray-600 text-gray-300 rounded-lg hover:border-gray-500 hover:text-white transition-all duration-200 text-sm font-medium"
                           >
                             <CodeBracketIcon className="w-4 h-4" />
-                            Código
+                            {t('projects.buttons.code')}
                           </a>
                           {repo.homepage && (
                             <a
@@ -186,7 +188,7 @@ const Projects: React.FC = () => {
                               className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-all duration-200 text-sm font-medium"
                             >
                               <ArrowTopRightOnSquareIcon className="w-4 h-4" />
-                              Demo
+                              {t('projects.buttons.demo')}
                             </a>
                           )}
                         </div>
@@ -211,7 +213,7 @@ const Projects: React.FC = () => {
                 className="inline-flex items-center gap-3 px-6 py-3 bg-white text-gray-900 rounded-full font-semibold hover:bg-gray-100 transition-all duration-200 hover:-translate-y-1 shadow-lg"
             >
               <GitHubIcon />
-              Visita mi GitHub
+              {t('projects.visitGithub')}
               </a>
             </motion.div>
           </>

@@ -1,0 +1,120 @@
+{
+  "hero": {
+    "greeting": "Hi, I'm",
+    "name": "Darío Albor", 
+    "subtitle": "Software Engineer & Platform Architect",
+    "viewProjects": "View my projects",
+    "contact": "Contact"
+  },
+  "about": {
+    "title": "About me",
+    "description": "Specialized in transforming complex business requirements into robust software platforms. My focus is on scalability, high availability, and efficiency.",
+    "skills": {
+      "frontend": {
+        "title": "Frontend",
+        "items": ["React", "Next.js", "Vue.js", "Astro", "JavaScript (ES6+)", "TypeScript", "Tailwind CSS", "Bootstrap", "Chakra UI"]
+      },
+      "backend": {
+        "title": "Backend",
+        "items": ["Node.js", "NestJS", "Python", "Java"]
+      },
+      "database": {
+        "title": "Databases",
+        "items": ["PostgreSQL", "MongoDB", "MySQL", "Redis"]
+      },
+      "events": {
+        "title": "Events",
+        "items": ["Apache Kafka", "RabbitMQ"]
+      },
+      "cloud": {
+        "title": "Cloud & DevOps",
+        "items": ["AWS", "Docker", "Kubernetes", "Vercel", "CI/CD", "Git", "Atlassian Environment"]
+      },
+      "uiux": {
+        "title": "UI & UX",
+        "items": ["Figma", "Adobe XD", "UI/UX", "Responsive Design"]
+      }
+    }
+  },
+  "experience": {
+    "title": "Experience",
+    "description": "Career focused on developing robust architectures and implementing high-complexity enterprise solutions",
+    "jobs": {
+      "vefixy": {
+        "title": "Software Developer",
+        "company": "Vefixy",
+        "period": "Aug 2024 - Present",
+        "duration": "1 year 2 months",
+        "description": "Development of full-stack web solutions for multiple clients in software consultancy. Specialized in scalable architectures with NestJS, React, Vue and Redux. Design and implementation of databases with PostgreSQL, MongoDB and Redis for enterprise applications."
+      },
+      "garzon": {
+        "title": "Software Developer",
+        "company": "Droguería Garzón", 
+        "period": "Jan 2022 - Aug 2024",
+        "duration": "2 years 8 months",
+        "description": "Led complete migration of legacy systems to modern technologies. Developed APIs for integration with COBOL systems, complete e-commerce and enterprise portal. Implemented ETL processes and business automation."
+      },
+      "albula": {
+        "title": "Frontend Developer",
+        "company": "Laboratorio Albula S.R.L",
+        "period": "Jan 2021 - Jan 2022",
+        "duration": "1 year", 
+        "description": "Specialized in landing page development and SEO strategies. Led advertising campaigns with Meta Ads and Google Ads, working closely with marketing teams to strengthen the brand's digital presence."
+      }
+    }
+  },
+  "projects": {
+    "title": "Projects",
+    "description": "GitHub repositories showcasing my experience with different technologies",
+    "noDescription": "No description available",
+    "buttons": {
+      "code": "Code", 
+      "demo": "Demo"
+    },
+    "visitGithub": "Visit my GitHub"
+  },
+  "contact": {
+    "title": "Contact",
+    "description": "If you need to contact me, feel free to write",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Your name",
+      "email": "Email",
+      "emailPlaceholder": "your@email.com",
+      "message": "Message",
+      "messagePlaceholder": "Tell me about your project...",
+      "send": "Send message",
+      "sending": "Sending...",
+      "sent": "Message sent!",
+      "error": "Error - Retry",
+      "successMessage": "Thank you! Your message has been sent successfully.",
+      "errorMessage": "There was an error sending the message. Please try again."
+    },
+    "recaptcha": "This site is protected by reCAPTCHA and the Google",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "googleText": "apply."
+  },
+  "footer": {
+    "copyright": "Dario Albor · All rights reserved",
+    "navigation": {
+      "about": "About",
+      "experience": "Experience",
+      "projects": "Projects", 
+      "contact": "Contact",
+      "cv": "CV"
+    }
+  },
+  "navbar": {
+    "about": "About",
+    "experience": "Experience",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "meta": {
+    "title": "Darío Albor - Software Engineer & Platform Architect",
+    "description": "Portfolio of Darío Albor, Software Engineer specialized in scalable architectures, full-stack development and enterprise solutions. Experience in React, Node.js, AWS and more.",
+    "keywords": "Darío Albor, Software Engineer, Full Stack Developer, React, Node.js, AWS, Portfolio, Argentina, Developer",
+    "author": "Darío Albor"
+  }
+}
