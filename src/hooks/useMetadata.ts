@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
+import { useCustomTranslation } from './useCustomTranslation';
 
 export const useMetadata = () => {
-  const { t, i18n } = useTranslation();
+  const { t, language } = useCustomTranslation();
 
   useEffect(() => {
     // Update document title
@@ -51,7 +51,7 @@ export const useMetadata = () => {
     }
     
     // Update lang attribute
-    document.documentElement.lang = i18n.language;
+    document.documentElement.lang = language;
     
-  }, [t, i18n.language]);
+  }, [t, language]);
 };

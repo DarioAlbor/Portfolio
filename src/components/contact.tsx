@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import React, { useState } from 'react';
-import { useTranslation } from 'react-i18next';
+import { useCustomTranslation } from '../hooks/useCustomTranslation';
 import { ContactForm } from '../types';
 import { EnvelopeIcon } from '@heroicons/react/24/outline';
 
@@ -25,7 +25,7 @@ declare global {
 }
 
 const Contact: React.FC = () => {
-    const { t } = useTranslation();
+    const { t } = useCustomTranslation();
     const [formData, setFormData] = useState<ContactForm>({
         name: '',
         email: '',

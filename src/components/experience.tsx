@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { useCustomTranslation } from '../hooks/useCustomTranslation';
 
 const ExperienceSection: React.FC = () => {
-    const { t } = useTranslation();
+    const { t } = useCustomTranslation();
     
     const experiences = [
         {

@@ -1,12 +1,12 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import React, { useEffect, useState } from 'react';
-import { useTranslation } from 'react-i18next';
+import { useCustomTranslation } from '../hooks/useCustomTranslation';
 
 const Navbar: React.FC = () => {
     const [hasScrolled, setHasScrolled] = useState(false);
     const { scrollY } = useScroll();
     const glowOpacity = useTransform(scrollY, [0, 100], [0, 0.15]);
-    const { t, i18n } = useTranslation();
+    const { t, changeLanguage, language } = useCustomTranslation();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -24,9 +24,6 @@ const Navbar: React.FC = () => {
         { href: "#contact", text: t('navbar.contact') }
     ] as const;
 
-    const changeLanguage = (lng: string) => {
-        i18n.changeLanguage(lng);
-    };
 
     return (
         <motion.header 
@@ -94,7 +91,7 @@ const Navbar: React.FC = () => {
                         <motion.button
                             onClick={() => changeLanguage('en')}
                             className={`relative w-8 h-6 rounded-sm overflow-hidden border transition-all duration-200 ${
-                                i18n.language === 'en' ? 'border-blue-400 shadow-lg shadow-blue-400/50' : 'border-white/20 hover:border-white/40'
+                                language === 'en' ? 'border-blue-400 shadow-lg shadow-blue-400/50' : 'border-white/20 hover:border-white/40'
                             }`}
                             whileHover={{ scale: 1.1 }}
                             whileTap={{ scale: 0.95 }}
@@ -109,7 +106,7 @@ const Navbar: React.FC = () => {
                         <motion.button
                             onClick={() => changeLanguage('es')}
                             className={`relative w-8 h-6 rounded-sm overflow-hidden border transition-all duration-200 ${
-                                i18n.language === 'es' ? 'border-blue-400 shadow-lg shadow-blue-400/50' : 'border-white/20 hover:border-white/40'
+                                language === 'es' ? 'border-blue-400 shadow-lg shadow-blue-400/50' : 'border-white/20 hover:border-white/40'
                             }`}
                             whileHover={{ scale: 1.1 }}
                             whileTap={{ scale: 0.95 }}

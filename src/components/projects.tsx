@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useTranslation } from 'react-i18next';
+import { useCustomTranslation } from '../hooks/useCustomTranslation';
 import { fetchGitHubRepos } from '../api/github';
 import { GitHubRepo } from '../types/github';
 import { motion } from 'framer-motion';
@@ -21,7 +21,7 @@ const GitHubIcon = () => (
 );
 
 const Projects: React.FC = () => {
-  const { t } = useTranslation();
+  const { t } = useCustomTranslation();
   const [repos, setRepos] = useState<GitHubRepo[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const username = process.env.REACT_APP_GITHUB_USERNAME;

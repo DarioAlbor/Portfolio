@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { useCustomTranslation } from '../hooks/useCustomTranslation';
 import { 
     ComputerDesktopIcon,
     CodeBracketIcon,
@@ -11,7 +11,7 @@ import {
 } from '@heroicons/react/24/outline';
 
 const AboutMe: React.FC = () => {
-    const { t } = useTranslation();
+    const { t } = useCustomTranslation();
     
     const skills = [
         { Icon: ComputerDesktopIcon, title: t('about.skills.frontend.title'), items: t('about.skills.frontend.items', { returnObjects: true }) },

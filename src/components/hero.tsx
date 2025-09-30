@@ -1,11 +1,11 @@
 import { motion } from 'framer-motion';
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { useCustomTranslation } from '../hooks/useCustomTranslation';
 import { Stars } from './assets/stars';
 import { Meteor } from './assets/meteor';
 
 const Hero: React.FC = () => {
-    const { t } = useTranslation();
+    const { t } = useCustomTranslation();
     
     return (
         <motion.section 
