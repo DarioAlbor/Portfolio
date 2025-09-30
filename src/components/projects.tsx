@@ -56,7 +56,6 @@ const Projects: React.FC = () => {
           );
           setRepos(sortedRepos);
         } catch (error) {
-          console.error('Error fetching repos:', error);
         } finally {
           setIsLoading(false);
         }

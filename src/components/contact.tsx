@@ -8,9 +8,20 @@ declare const process: {
     REACT_APP_GITHUB_URL?: string;
     REACT_APP_LINKEDIN_URL?: string;
     REACT_APP_EMAIL?: string;
+    REACT_APP_FORMSPREE_ENDPOINT?: string;
+    REACT_APP_RECAPTCHA_SITE_KEY?: string;
     [key: string]: string | undefined;
   };
 };
+
+declare global {
+  interface Window {
+    grecaptcha: {
+      ready: (callback: () => void) => void;
+      execute: (siteKey: string, options: { action: string }) => Promise<string>;
+    };
+  }
+}
 
 const Contact: React.FC = () => {
     const [formData, setFormData] = useState<ContactForm>({
@@ -18,10 +29,71 @@ const Contact: React.FC = () => {
         email: '',
         message: ''
     });
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        console.log('Form data:', formData);
+        setIsSubmitting(true);
+        setSubmitStatus('idle');
+
+        const formspreeEndpoint = process.env.REACT_APP_FORMSPREE_ENDPOINT;
+        const recaptchaSiteKey = process.env.REACT_APP_RECAPTCHA_SITE_KEY;
+        
+        if (!formspreeEndpoint) {
+            console.error('Formspree endpoint not configured');
+            setSubmitStatus('error');
+            setIsSubmitting(false);
+            return;
+        }
+
+        if (!recaptchaSiteKey) {
+            console.error('reCAPTCHA site key not configured');
+            setSubmitStatus('error');
+            setIsSubmitting(false);
+            return;
+        }
+
+        try {
+            const recaptchaToken = await new Promise<string>((resolve, reject) => {
+                if (!window.grecaptcha) {
+                    reject(new Error('reCAPTCHA not loaded'));
+                    return;
+                }
+
+                window.grecaptcha.ready(() => {
+                    window.grecaptcha
+                        .execute(recaptchaSiteKey, { action: 'contact_form' })
+                        .then(resolve)
+                        .catch(reject);
+                });
+            });
+
+            const response = await fetch(formspreeEndpoint, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    name: formData.name,
+                    email: formData.email,
+                    message: formData.message,
+                    'g-recaptcha-response': recaptchaToken,
+                }),
+            });
+
+            if (response.ok) {
+                setSubmitStatus('success');
+                setFormData({ name: '', email: '', message: '' });
+            } else {
+                setSubmitStatus('error');
+            }
+        } catch (error) {
+            console.error('Error submitting form:', error);
+            setSubmitStatus('error');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     const githubUrl = process.env.REACT_APP_GITHUB_URL;
@@ -89,14 +161,71 @@ const Contact: React.FC = () => {
                                 />
                             </div>
                             <motion.button
-                                whileHover={{ scale: 1.02 }}
-                                whileTap={{ scale: 0.98 }}
-                                className="w-full flex items-center justify-center gap-2 bg-blue-500 hover:bg-blue-600 text-white py-3 px-6 rounded-lg font-medium transition-all duration-200"
+                                whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
+                                whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
+                                className={`w-full flex items-center justify-center gap-2 py-3 px-6 rounded-lg font-medium transition-all duration-200 ${
+                                    isSubmitting 
+                                        ? 'bg-gray-500 cursor-not-allowed' 
+                                        : submitStatus === 'success'
+                                        ? 'bg-green-500 hover:bg-green-600'
+                                        : submitStatus === 'error'
+                                        ? 'bg-red-500 hover:bg-red-600'
+                                        : 'bg-blue-500 hover:bg-blue-600'
+                                } text-white`}
                                 type="submit"
+                                disabled={isSubmitting}
                             >
                                 <EnvelopeIcon className="w-5 h-5" />
-                                Enviar mensaje
+                                {isSubmitting 
+                                    ? 'Enviando...' 
+                                    : submitStatus === 'success'
+                                    ? 'Mensaje enviado!'
+                                    : submitStatus === 'error'
+                                    ? 'Error - Reintentar'
+                                    : 'Enviar mensaje'}
                             </motion.button>
+                            
+                            {submitStatus === 'success' && (
+                                <motion.div
+                                    initial={{ opacity: 0, y: 10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    className="text-center text-green-400 text-sm mt-2"
+                                >
+                                    ¡Gracias! Tu mensaje ha sido enviado correctamente.
+                                </motion.div>
+                            )}
+                            
+                            {submitStatus === 'error' && (
+                                <motion.div
+                                    initial={{ opacity: 0, y: 10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    className="text-center text-red-400 text-sm mt-2"
+                                >
+                                    Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo.
+                                </motion.div>
+                            )}
+                            
+                            <div className="text-center text-xs text-gray-500 mt-4">
+                                Este sitio está protegido por reCAPTCHA y se aplican la{' '}
+                                <a 
+                                    href="https://policies.google.com/privacy" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    className="text-blue-400 hover:text-blue-300 underline"
+                                >
+                                    Política de privacidad
+                                </a>{' '}
+                                y los{' '}
+                                <a 
+                                    href="https://policies.google.com/terms" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    className="text-blue-400 hover:text-blue-300 underline"
+                                >
+                                    Términos de servicio
+                                </a>{' '}
+                                de Google.
+                            </div>
                         </form>
 
                          <div className="flex flex-row justify-center items-center gap-5 mt-8 pt-6 border-t border-gray-700/50">

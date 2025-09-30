@@ -11,10 +11,8 @@ export const fetchGitHubRepos = async (username: string) => {
                 type: 'owner'
             }
         });
-        console.log('API Response:', response);
         return response.data;
     } catch (error) {
-        console.error('Error fetching GitHub repositories:', error);
         throw error;
     }
 };
