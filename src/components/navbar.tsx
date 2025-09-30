@@ -1,12 +1,5 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import React, { useEffect, useState } from 'react';
-import { 
-    AiOutlineHome,
-    AiOutlineUser, 
-    AiOutlineExperiment, 
-    AiOutlineProject, 
-    AiOutlineMessage 
-} from 'react-icons/ai';
 
 const Navbar: React.FC = () => {
     const [hasScrolled, setHasScrolled] = useState(false);
@@ -23,12 +16,11 @@ const Navbar: React.FC = () => {
     }, []);
 
     const navItems = [
-        { href: "#home", text: "Inicio", Icon: AiOutlineHome },
-        { href: "#about", text: "Sobre mí", Icon: AiOutlineUser },
-        { href: "#experience", text: "Experiencia", Icon: AiOutlineExperiment },
-        { href: "#projects", text: "Proyectos", Icon: AiOutlineProject },
-        { href: "#contact", text: "Contacto", Icon: AiOutlineMessage }
-    ];
+        { href: "#about", text: "Sobre mí" },
+        { href: "#experience", text: "Experiencia" },
+        { href: "#projects", text: "Proyectos" },
+        { href: "#contact", text: "Contacto" }
+    ] as const;
 
     return (
         <motion.header 
@@ -43,9 +35,11 @@ const Navbar: React.FC = () => {
                     style={{ opacity: glowOpacity }}
                 />
                 <div className="flex items-center space-x-4 md:space-x-8">
-                    <motion.div
-                        className="relative"
+                    <motion.a
+                        href="#home"
+                        className="relative block cursor-pointer"
                         whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.95 }}
                     >
                         <motion.div
                             className="absolute inset-0 -z-10 rounded-full opacity-0 hover:opacity-75 bg-white/30 blur-lg transition-opacity duration-300"
@@ -56,10 +50,10 @@ const Navbar: React.FC = () => {
                         />
                         <img 
                             src="/images/logowhite.svg" 
-                            alt="Logo" 
+                            alt="Logo - Ir a Inicio" 
                             className="w-8 h-8 md:w-10 md:h-10"
                         />
-                    </motion.div>
+                    </motion.a>
 
                     <div className="w-px h-6 bg-white/10" />
                     
@@ -71,8 +65,6 @@ const Navbar: React.FC = () => {
                             whileHover={{ scale: 1.1 }}
                             whileTap={{ scale: 0.95 }}
                         >
-                            <span className="relative z-10">
-                            </span>
                             <span className="relative z-10 text-xs md:text-sm font-medium">
                                 {item.text}
                             </span>
