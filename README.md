@@ -23,11 +23,6 @@ Modern portfolio website showcasing software engineering projects and experience
 
 ## Quick Start
 
-### Prerequisites
-
-- Node.js (v16 or higher)
-- npm or yarn
-
 ### Installation
 
 1. **Clone the repository**
